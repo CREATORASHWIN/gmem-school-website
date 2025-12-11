@@ -1,0 +1,13 @@
+<section id="gallery" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-12 text-center">
+      School Gallery
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div *ngFor="let img of images" class="overflow-hidden rounded-lg shadow-lg">
+        <img [src]="img" alt="Gallery Image" class="w-full h-64 object-cover transform hover:scale-105 transition duration-300">
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-gallery',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
+})
+export class GalleryComponent {
+  // Sample images for the gallery
+  images = [
+    'gallery1.jpg',
+    'gallery2.jpg',
+    'gallery3.jpg',
+    'gallery4.jpg',
+    'gallery5.jpg',
+    'gallery6.jpg'
+  ];
+}
