@@ -1,27 +1,36 @@
 import { Component } from '@angular/core';
-import { CommonModule, ViewportScroller } from '@angular/common';
+import { CommonModule } from '@angular/common';
+
+type NavItem = {
+  label: string;
+  section: string;
+};
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule], // enables *ngIf, *ngFor
+  imports: [CommonModule],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
   menuOpen = false;
 
-  constructor(private viewportScroller: ViewportScroller) {}
+  navItems: NavItem[] = [
+    { label: 'Home', section: 'hero' },
+    { label: 'About', section: 'about' },
+    { label: 'Gallery', section: 'gallery' },
+    { label: 'News', section: 'news' },
+    { label: 'Achievements', section: 'achievements' },
+    { label: 'Events', section: 'events' },
+    { label: 'Contact', section: 'contact' },
+  ];
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
 
-  // Scroll to any section by ID
   scrollTo(section: string) {
-    const el = document.getElementById(section);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-    this.menuOpen = false; // close mobile menu
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    this.menuOpen = false;
   }
 }

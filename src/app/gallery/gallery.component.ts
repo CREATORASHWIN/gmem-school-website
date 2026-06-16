@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent {
-  // Sample images for the gallery
   images = [
     'gallery1.jpg',
     'gallery2.jpg',
@@ -17,5 +16,14 @@ export class GalleryComponent {
     'gallery4.jpg',
     'gallery5.jpg',
     'gallery6.jpg'
+  ];
+
+  captions = [
+    'Morning assembly and school spirit',
+    'Classroom learning moments',
+    'Creative student activities',
+    'Sports and teamwork',
+    'Science and discovery',
+    'Celebrations and cultural programs',
   ];
 }

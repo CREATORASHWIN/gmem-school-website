@@ -4,33 +4,32 @@ import { Component } from '@angular/core';
   selector: 'app-hero',
   standalone: true,
   template: `
-    <section id="hero" class="relative bg-blue-50">
-      <!-- Background Image -->
-      <div class="absolute inset-0">
-        <img 
-          src="school-building.jpg" 
-          alt="Gandhi Memorial English High School" 
-          class="w-full h-full object-cover brightness-75"
-        />
-      </div>
+    <section id="hero" class="scroll-mt-24 bg-slate-100 pt-20">
+      <img
+        src="/hero-background.png"
+        alt="Gandhi Memorial English High School campus"
+        class="block w-full"
+      />
+    </section>
 
-      <!-- Overlay Content -->
-      <div class="relative z-10 text-center py-32 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
-          Gandhi Memorial English High School
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-100 mb-6">
-          Inspiring Excellence Through Quality Education
-        </p>
-        <a 
-          href="#admissions" 
-          class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-        >
-          Admissions 2025 – Apply Now
-        </a>
+    <section class="bg-white py-6 shadow-sm">
+      <div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <p class="text-sm font-black uppercase tracking-wider text-blue-700">Admissions open for the new academic year</p>
+          <p class="mt-2 max-w-2xl text-lg font-semibold leading-8 text-slate-700">
+            A disciplined, caring and future-ready school community for strong academics, confidence, values and curiosity.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-900/20 transition hover:-translate-y-0.5 hover:bg-blue-700">
+            Enquire Now
+          </a>
+          <a href="#about" class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700">
+            Explore School
+          </a>
+        </div>
       </div>
     </section>
   `,
-  styles: []
 })
 export class HeroComponent {}

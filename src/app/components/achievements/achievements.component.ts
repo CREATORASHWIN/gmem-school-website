@@ -10,19 +10,19 @@ import { CommonModule } from '@angular/common';
 export class AchievementsComponent {
   achievements = [
     {
-      title: 'Best School Award 2024',
-      description: 'Recognized as the Best School in the district for academic excellence.',
-      date: 'March 2024'
+      title: 'Academic excellence',
+      description: 'Structured teaching and regular evaluation help students build strong fundamentals.',
+      date: 'Every term'
     },
     {
-      title: 'Science Innovation Trophy',
-      description: 'Students won the state-level science innovation competition.',
-      date: 'July 2024'
+      title: 'Science and innovation',
+      description: 'Practical projects encourage curiosity, experimentation and confident presentation.',
+      date: 'Activity based'
     },
     {
-      title: 'Sports Championship',
-      description: 'Our students won the inter-school sports championship.',
-      date: 'December 2024'
+      title: 'Sports and culture',
+      description: 'Students participate in competitions, performances and teamwork-driven events.',
+      date: 'Throughout the year'
     }
   ];
 }

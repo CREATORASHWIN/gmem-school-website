@@ -1,51 +1,67 @@
-<header class="fixed w-full bg-white shadow-md z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-    <!-- Logo / School Name -->
-    <div
-      class="text-xl md:text-2xl font-bold text-gray-800 cursor-pointer hover:text-blue-600 transition-colors duration-300"
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-white/90 shadow-sm backdrop-blur-xl">
+  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <button
+      type="button"
+      class="flex min-w-0 items-center gap-3 text-left"
       (click)="scrollTo('hero')"
+      aria-label="Go to home"
     >
-      GANDHI MEMORIAL ENGLISH HIGH SCHOOL
-    </div>
+      <span class="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-blue-700 text-sm font-black text-white shadow-lg shadow-blue-900/20">
+        GM
+      </span>
+      <span class="min-w-0">
+        <span class="block text-sm font-black uppercase leading-tight tracking-wide text-slate-950 sm:text-base">
+          Gandhi Memorial
+        </span>
+        <span class="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+          English High School
+        </span>
+      </span>
+    </button>
 
-    <!-- Navigation (Desktop) -->
-    <nav class="hidden md:flex space-x-6">
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('hero')">Home</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('about')">About</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('gallery')">Gallery</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('news')">News</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('achievements')">Achievements</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('events')">Events</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('contact')">Contact</a>
-    </nav>
-
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden">
-      <button (click)="toggleMenu()" class="focus:outline-none">
-        <svg *ngIf="!menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg *ngIf="menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
+      <button
+        *ngFor="let item of navItems"
+        type="button"
+        class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
+        (click)="scrollTo(item.section)"
+      >
+        {{ item.label }}
       </button>
-    </div>
+    </nav>
+
+    <button
+      type="button"
+      class="hidden rounded-md bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800 md:inline-flex"
+      (click)="scrollTo('contact')"
+    >
+      Admissions Enquiry
+    </button>
+
+    <button
+      type="button"
+      class="grid h-11 w-11 place-items-center rounded-md border border-slate-200 text-slate-800 lg:hidden"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Toggle navigation"
+    >
+      <svg *ngIf="!menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+      <svg *ngIf="menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/>
+      </svg>
+    </button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div *ngIf="menuOpen" class="md:hidden bg-white shadow-md">
-    <nav class="flex flex-col space-y-2 p-4">
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('hero')">Home</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('about')">About</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('gallery')">Gallery</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('news')">News</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('achievements')">Achievements</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('events')">Events</a>
-      <a class="text-gray-700 hover:text-blue-600 cursor-pointer" (click)="scrollTo('contact')">Contact</a>
-    </nav>
-  </div>
+  <nav *ngIf="menuOpen" class="border-t border-slate-100 bg-white px-4 py-3 shadow-xl lg:hidden" aria-label="Mobile navigation">
+    <button
+      *ngFor="let item of navItems"
+      type="button"
+      class="block w-full rounded-md px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+      (click)="scrollTo(item.section)"
+    >
+      {{ item.label }}
+    </button>
+  </nav>
 </header>

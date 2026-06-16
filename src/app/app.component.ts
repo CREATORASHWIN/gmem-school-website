@@ -13,9 +13,9 @@ import { FooterComponent } from './footer/footer.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    HeaderComponent,    // ✅ Added
-    HeroComponent,      // ✅ Make sure this exists and is standalone
-    AboutComponent,     // ✅ Make sure this exists and is standalone
+    HeaderComponent,
+    HeroComponent,
+    AboutComponent,
     GalleryComponent,
     ContactComponent,
     NewsComponent,

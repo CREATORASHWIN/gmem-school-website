@@ -10,19 +10,19 @@ import { CommonModule } from '@angular/common';
 export class EventsComponent {
   events = [
     {
-      title: 'Annual Sports Day',
-      date: '10 Dec 2025',
-      description: 'A day full of sports activities and competitions for all students.'
+      title: 'Sports Day',
+      date: 'Annual event',
+      description: 'Track races, team games and house activities that build fitness and sportsmanship.'
     },
     {
       title: 'Science Exhibition',
-      date: '5 Nov 2025',
-      description: 'Students present innovative science projects and experiments.'
+      date: 'Academic activity',
+      description: 'Students explain models, experiments and creative ideas to teachers and parents.'
     },
     {
       title: 'Cultural Fest',
-      date: '20 Oct 2025',
-      description: 'Music, dance, drama performances showcasing student talent.'
+      date: 'School celebration',
+      description: 'Music, dance, drama and public speaking opportunities for confident expression.'
     }
   ];
 }
