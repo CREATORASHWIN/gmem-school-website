@@ -1,36 +1,36 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 type NavItem = {
   label: string;
-  section: string;
+  path: string;
 };
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
   menuOpen = false;
 
   navItems: NavItem[] = [
-    { label: 'Home', section: 'hero' },
-    { label: 'About', section: 'about' },
-    { label: 'Gallery', section: 'gallery' },
-    { label: 'News', section: 'news' },
-    { label: 'Achievements', section: 'achievements' },
-    { label: 'Events', section: 'events' },
-    { label: 'Contact', section: 'contact' },
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Gallery', path: '/gallery' },
+    { label: 'News', path: '/news' },
+    { label: 'Achievements', path: '/achievements' },
+    { label: 'Events', path: '/events' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
 
-  scrollTo(section: string) {
-    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  closeMenu() {
     this.menuOpen = false;
   }
 }

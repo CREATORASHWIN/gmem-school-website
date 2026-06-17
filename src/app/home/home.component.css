@@ -1,0 +1,17 @@
+.results-marquee {
+  animation: results-scroll 28s linear infinite;
+}
+
+.results-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes results-scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}

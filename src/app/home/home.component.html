@@ -1,0 +1,102 @@
+<app-hero></app-hero>
+
+<section class="bg-white py-16 sm:py-20">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+    <div>
+      <p class="section-kicker">Welcome to our school</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-slate-950 sm:text-5xl">
+        A caring school for strong academics, discipline and all-round growth.
+      </h1>
+      <p class="mt-5 text-lg leading-8 text-slate-600">
+        Gandhi Memorial English High School supports children with purposeful teaching, personal attention, cultural activities, sports and value-based learning. Our focus is to help every student learn with confidence and grow with good character.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <article *ngFor="let item of highlights" class="group overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img [src]="'/' + item.image" [alt]="item.title" class="h-36 w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="p-4">
+            <h2 class="text-base font-black text-slate-950">{{ item.title }}</h2>
+            <p class="mt-2 text-sm leading-6 text-slate-600">{{ item.text }}</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <article *ngFor="let location of locations" class="rounded-md bg-slate-50 p-5 ring-1 ring-slate-200 transition hover:-translate-y-1 hover:bg-blue-50 hover:ring-blue-200">
+          <p class="text-sm font-black uppercase tracking-wider text-blue-700">{{ location.title }}</p>
+          <p class="mt-3 text-sm leading-6 text-slate-700">{{ location.address }}</p>
+        </article>
+      </div>
+    </div>
+
+    <aside class="rounded-md bg-slate-950 p-5 text-white shadow-2xl shadow-slate-200">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-blue-200">Board results</p>
+          <h2 class="mt-2 text-2xl font-black">10th and 12th toppers</h2>
+        </div>
+      </div>
+
+      <div class="mt-6 h-[520px] overflow-hidden rounded-md border border-white/10 bg-white/5">
+        <div class="results-marquee space-y-6 p-4">
+          <section>
+            <h3 class="mb-3 text-lg font-black text-white">Class 10 Top Students</h3>
+            <ol class="space-y-2">
+              <li
+                *ngFor="let student of tenthToppers"
+                class="flex items-center justify-between gap-4 rounded-md p-3"
+                [ngClass]="student.rank <= 3 ? 'bg-blue-600 text-white shadow-lg' : 'bg-white/10 text-slate-100'"
+              >
+                <span class="flex min-w-0 items-center gap-3">
+                  <span class="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-white/15 text-sm font-black">
+                    {{ student.rank }}
+                  </span>
+                  <span class="truncate font-bold">{{ student.name }}</span>
+                </span>
+                <span class="shrink-0 font-black">{{ student.percentage }}</span>
+              </li>
+            </ol>
+          </section>
+
+          <section>
+            <h3 class="mb-3 text-lg font-black text-white">Class 12 Top Students</h3>
+            <ol class="space-y-2">
+              <li
+                *ngFor="let student of twelfthToppers"
+                class="flex items-center justify-between gap-4 rounded-md p-3"
+                [ngClass]="student.rank <= 3 ? 'bg-amber-500 text-slate-950 shadow-lg' : 'bg-white/10 text-slate-100'"
+              >
+                <span class="flex min-w-0 items-center gap-3">
+                  <span class="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-white/25 text-sm font-black">
+                    {{ student.rank }}
+                  </span>
+                  <span class="truncate font-bold">{{ student.name }}</span>
+                </span>
+                <span class="shrink-0 font-black">{{ student.percentage }}</span>
+              </li>
+            </ol>
+          </section>
+
+          <section>
+            <h3 class="mb-3 text-lg font-black text-white">Class 10 Top Students</h3>
+            <ol class="space-y-2">
+              <li
+                *ngFor="let student of tenthToppers"
+                class="flex items-center justify-between gap-4 rounded-md p-3"
+                [ngClass]="student.rank <= 3 ? 'bg-blue-600 text-white shadow-lg' : 'bg-white/10 text-slate-100'"
+              >
+                <span class="flex min-w-0 items-center gap-3">
+                  <span class="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-white/15 text-sm font-black">
+                    {{ student.rank }}
+                  </span>
+                  <span class="truncate font-bold">{{ student.name }}</span>
+                </span>
+                <span class="shrink-0 font-black">{{ student.percentage }}</span>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>

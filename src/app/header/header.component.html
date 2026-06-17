@@ -1,10 +1,10 @@
-<header class="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-white/90 shadow-sm backdrop-blur-xl">
+<header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-xl">
   <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-    <button
-      type="button"
+    <a
+      routerLink="/"
       class="flex min-w-0 items-center gap-3 text-left"
-      (click)="scrollTo('hero')"
       aria-label="Go to home"
+      (click)="closeMenu()"
     >
       <span class="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-blue-700 text-sm font-black text-white shadow-lg shadow-blue-900/20">
         GM
@@ -17,26 +17,39 @@
           English High School
         </span>
       </span>
-    </button>
+    </a>
 
     <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
-      <button
-        *ngFor="let item of navItems"
-        type="button"
-        class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
-        (click)="scrollTo(item.section)"
-      >
-        {{ item.label }}
-      </button>
+      <ng-container *ngFor="let item of navItems">
+        <a
+          *ngIf="item.path === '/'; else desktopNewTabLink"
+          [routerLink]="item.path"
+          routerLinkActive="bg-blue-50 text-blue-700"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
+        >
+          {{ item.label }}
+        </a>
+
+        <ng-template #desktopNewTabLink>
+          <a
+            [href]="item.path"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
+          >
+            {{ item.label }}
+          </a>
+        </ng-template>
+      </ng-container>
     </nav>
 
-    <button
-      type="button"
+    <a
+      routerLink="/contact"
       class="hidden rounded-md bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800 md:inline-flex"
-      (click)="scrollTo('contact')"
     >
       Admissions Enquiry
-    </button>
+    </a>
 
     <button
       type="button"
@@ -55,13 +68,29 @@
   </div>
 
   <nav *ngIf="menuOpen" class="border-t border-slate-100 bg-white px-4 py-3 shadow-xl lg:hidden" aria-label="Mobile navigation">
-    <button
-      *ngFor="let item of navItems"
-      type="button"
-      class="block w-full rounded-md px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700"
-      (click)="scrollTo(item.section)"
-    >
-      {{ item.label }}
-    </button>
+    <ng-container *ngFor="let item of navItems">
+      <a
+        *ngIf="item.path === '/'; else mobileNewTabLink"
+        [routerLink]="item.path"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="block w-full rounded-md px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+        (click)="closeMenu()"
+      >
+        {{ item.label }}
+      </a>
+
+      <ng-template #mobileNewTabLink>
+        <a
+          [href]="item.path"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full rounded-md px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+          (click)="closeMenu()"
+        >
+          {{ item.label }}
+        </a>
+      </ng-template>
+    </ng-container>
   </nav>
 </header>
