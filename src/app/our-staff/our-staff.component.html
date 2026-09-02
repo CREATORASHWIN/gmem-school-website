@@ -1,0 +1,330 @@
+<section class="staff-page">
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <div class="staff-hero">
+
+    <div class="hero-decoration hero-decoration-one"></div>
+    <div class="hero-decoration hero-decoration-two"></div>
+
+    <div class="hero-content">
+
+      <span class="hero-label">
+        OUR STAFF
+      </span>
+
+      <h1>
+        Meet Our Teaching Staff
+      </h1>
+
+      <p>
+        Our dedicated teachers and staff members work together to provide
+        quality education, guidance and support to every student.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <div class="staff-container">
+
+
+    <!-- =========================
+         TEACHING STAFF
+    ========================== -->
+
+    <section class="staff-section">
+
+      <div class="section-top">
+
+        <div>
+
+          <span class="section-label">
+            OUR TEACHING STAFF
+          </span>
+
+          <h2>
+            Secondary &amp; Jr. College Section
+          </h2>
+
+          <p>
+            Meet the dedicated teachers who guide and inspire our students.
+          </p>
+
+        </div>
+
+        <div class="member-count">
+          <strong>{{ teachingStaff.length }}</strong>
+          <span>Members</span>
+        </div>
+
+      </div>
+
+
+      <div class="staff-table">
+
+        <!-- TABLE HEADER -->
+
+        <div class="staff-header">
+
+          <div class="number-column">
+            #
+          </div>
+
+          <div class="teacher-column">
+            NAME OF THE TEACHER
+          </div>
+
+          <div class="qualification-column">
+            QUALIFICATION
+          </div>
+
+          <div class="post-column">
+            POST
+          </div>
+
+        </div>
+
+
+        <!-- STAFF ROWS -->
+
+        <div
+          class="staff-row"
+          *ngFor="let staff of teachingStaff; let i = index"
+        >
+
+          <!-- NUMBER -->
+
+          <div class="number-column">
+
+            <span class="number-badge">
+              {{ i + 1 }}
+            </span>
+
+          </div>
+
+
+          <!-- NAME -->
+
+          <div class="teacher-column">
+
+            <div class="teacher-info">
+
+              <div class="staff-avatar">
+                {{ getInitials(staff.name) }}
+              </div>
+
+              <div class="teacher-name-wrapper">
+
+                <strong>
+                  {{ staff.name }}
+                </strong>
+
+                <span>
+                  Staff Member
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- QUALIFICATION -->
+
+          <div class="qualification-column">
+
+            {{ staff.qualification }}
+
+          </div>
+
+
+          <!-- POST -->
+
+          <div class="post-column">
+
+            <span
+              class="post-badge"
+              [class.senior-post]="isSeniorPost(staff.post)"
+            >
+              {{ staff.post }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         NON-TEACHING STAFF
+    ========================== -->
+
+    <section class="staff-section non-teaching-section">
+
+      <div class="section-top">
+
+        <div>
+
+          <span class="section-label">
+            OUR STAFF
+          </span>
+
+          <h2>
+            Non-Teaching Staff
+          </h2>
+
+          <p>
+            Our non-teaching staff members support the smooth functioning
+            and daily operations of our school.
+          </p>
+
+        </div>
+
+        <div class="member-count">
+          <strong>{{ nonTeachingStaff.length }}</strong>
+          <span>Members</span>
+        </div>
+
+      </div>
+
+
+      <div class="staff-table">
+
+        <!-- TABLE HEADER -->
+
+        <div class="staff-header">
+
+          <div class="number-column">
+            #
+          </div>
+
+          <div class="teacher-column">
+            NAME OF THE STAFF
+          </div>
+
+          <div class="qualification-column">
+            QUALIFICATION
+          </div>
+
+          <div class="post-column">
+            POST
+          </div>
+
+        </div>
+
+
+        <!-- NON-TEACHING ROWS -->
+
+        <div
+          class="staff-row"
+          *ngFor="let staff of nonTeachingStaff; let i = index"
+        >
+
+          <!-- NUMBER -->
+
+          <div class="number-column">
+
+            <span class="number-badge">
+              {{ i + 1 }}
+            </span>
+
+          </div>
+
+
+          <!-- NAME -->
+
+          <div class="teacher-column">
+
+            <div class="teacher-info">
+
+              <div class="staff-avatar">
+                {{ getInitials(staff.name) }}
+              </div>
+
+              <div class="teacher-name-wrapper">
+
+                <strong>
+                  {{ staff.name }}
+                </strong>
+
+                <span>
+                  Staff Member
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- QUALIFICATION -->
+
+          <div class="qualification-column">
+
+            {{ staff.qualification || '—' }}
+
+          </div>
+
+
+          <!-- POST -->
+
+          <div class="post-column">
+
+            <span class="post-badge">
+              {{ staff.post }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STAFF MESSAGE
+    ========================== -->
+
+    <div class="staff-message">
+
+      <div class="message-icon">
+        👩‍🏫
+      </div>
+
+      <div>
+
+        <h3>
+          Our Staff, Our Strength
+        </h3>
+
+        <p>
+          Our teachers and staff members play an important role in creating
+          a positive learning environment and supporting the overall growth
+          and development of our students.
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>

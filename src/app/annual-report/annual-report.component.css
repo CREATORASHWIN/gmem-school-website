@@ -1,0 +1,285 @@
+/* PAGE */
+.annual-report-page {
+  min-height: 100vh;
+  padding: 120px 6% 80px;
+  background: #f8fafc;
+}
+
+
+/* PAGE HEADER */
+.page-header {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.page-header h1 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.page-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* REPORT GRID */
+.report-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* REPORT CARD */
+.report-card {
+  padding: 34px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.10);
+}
+
+
+/* ICON */
+.report-icon {
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 20px;
+
+  background: #eff6ff;
+  border-radius: 16px;
+
+  font-size: 29px;
+}
+
+
+/* HEADINGS */
+.report-card h2 {
+  margin: 0 0 18px;
+
+  color: #0f172a;
+
+  font-size: 26px;
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+
+/* PARAGRAPHS */
+.report-card p {
+  margin: 0 0 16px;
+
+  color: #475569;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.report-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-top: 24px;
+  padding: 18px;
+
+  background: #f8fafc;
+
+  border-left: 4px solid #2563eb;
+  border-radius: 0 12px 12px 0;
+}
+
+.highlight-box strong {
+  color: #1e3a8a;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.highlight-box span {
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* COMPETITIONS */
+.competition-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.competition-list span {
+  padding: 9px 14px;
+
+  background: #f1f5f9;
+
+  border-radius: 999px;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* ART MESSAGE */
+.art-message {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+  padding: 20px;
+
+  background: #f8fafc;
+
+  border-radius: 14px;
+
+  color: #1d4ed8;
+
+  text-align: center;
+}
+
+.art-message span {
+  font-size: 18px;
+}
+
+.art-message strong {
+  font-size: 17px;
+}
+
+
+/* CARD TOP BORDERS */
+.academic-card {
+  border-top: 4px solid #2563eb;
+}
+
+.scholarship-card {
+  border-top: 4px solid #16a34a;
+}
+
+.competitions-card {
+  border-top: 4px solid #f59e0b;
+}
+
+.art-card {
+  border-top: 4px solid #9333ea;
+}
+
+
+/* TABLET */
+@media (max-width: 900px) {
+
+  .annual-report-page {
+    padding: 110px 4% 60px;
+  }
+
+  .report-container {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: 40px;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .annual-report-page {
+    padding: 100px 18px 50px;
+  }
+
+  .page-header {
+    margin-bottom: 40px;
+  }
+
+  .page-header h1 {
+    font-size: 34px;
+  }
+
+  .page-header p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .report-card {
+    padding: 24px;
+
+    border-radius: 16px;
+  }
+
+  .report-card h2 {
+    font-size: 22px;
+  }
+
+  .report-card p {
+    font-size: 15px;
+  }
+
+  .competition-list span {
+    font-size: 12px;
+  }
+
+  .art-message {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,421 @@
+<section class="academic-page">
+
+  <!-- HERO -->
+  <div class="academic-hero">
+
+    <div class="hero-circle hero-circle-one"></div>
+    <div class="hero-circle hero-circle-two"></div>
+
+    <div class="hero-content">
+
+      <span class="hero-label">
+        ACADEMIC EXCELLENCE
+      </span>
+
+      <h1>
+        Excellence in Academics
+      </h1>
+
+      <p>
+        Celebrating the academic achievements of our students and their
+        outstanding performance in SSC and HSC examinations.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="academic-container">
+
+    <!-- STATS -->
+    <div class="stats-grid">
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🏆
+        </div>
+
+        <div>
+          <strong>{{ sscScorers.length }}</strong>
+          <span>SSC Records</span>
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🎓
+        </div>
+
+        <div>
+          <strong>{{ hscScorers.length }}</strong>
+          <span>HSC Records</span>
+        </div>
+
+      </div>
+
+
+      <div class="stat-card highlight-stat">
+
+        <div class="stat-icon">
+          ⭐
+        </div>
+
+        <div>
+          <strong>{{ highestSscPercentage.toFixed(2) }}%</strong>
+          <span>Highest SSC Score</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================
+         SSC
+    ================================== -->
+
+    <section class="scores-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-label">
+            SECONDARY SCHOOL CERTIFICATE
+          </span>
+
+          <h2>
+            Our Top Scorers in SSC Exam
+          </h2>
+
+          <p>
+            A record of outstanding SSC performance from 1997 to 2026.
+          </p>
+
+        </div>
+
+        <div class="achievement-badge">
+          🏅 SSC Achievement
+        </div>
+
+      </div>
+
+
+      <div class="scores-table">
+
+        <!-- HEADER -->
+
+        <div class="scores-header">
+
+          <div>YEAR</div>
+
+          <div>NAME OF THE STUDENT</div>
+
+          <div>
+            INDIVIDUAL<br>
+            PERCENTAGE
+          </div>
+
+          <div>
+            SCHOOL<br>
+            PASSING PERCENTAGE
+          </div>
+
+        </div>
+
+
+        <!-- ROWS -->
+
+        <div
+          class="score-row"
+          *ngFor="let student of sscScorers; let i = index"
+          [class.highest-row]="isHighestSsc(student)"
+        >
+
+          <div class="year-cell">
+            <span class="year-badge">
+              {{ student.year }}
+            </span>
+          </div>
+
+
+          <div class="student-cell">
+
+            <div class="student-number">
+              {{ i + 1 }}
+            </div>
+
+            <div class="student-info">
+
+              <strong>
+                {{ student.name }}
+              </strong>
+
+              <span>
+                SSC Top Scorer
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="individual-cell">
+
+            <strong>
+              {{ student.percentage.toFixed(2) }}%
+            </strong>
+
+            <div class="percentage-bar">
+              <span
+                [style.width.%]="student.percentage"
+              ></span>
+            </div>
+
+          </div>
+
+
+          <div class="school-cell">
+
+            <span
+              class="school-percentage"
+              [class.perfect]="student.schoolPassing === 100"
+            >
+              {{ student.schoolPassing.toFixed(2) }}%
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         HSC
+    ================================== -->
+
+    <section class="scores-section hsc-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-label">
+            HIGHER SECONDARY CERTIFICATE
+          </span>
+
+          <h2>
+            Our Top Scorers in HSC Exam
+          </h2>
+
+          <p>
+            Outstanding achievements of our Junior College students.
+          </p>
+
+        </div>
+
+        <div class="achievement-badge">
+          🎓 HSC Achievement
+        </div>
+
+      </div>
+
+
+      <div class="scores-table">
+
+        <!-- HEADER -->
+
+        <div class="scores-header hsc-header">
+
+          <div>YEAR</div>
+
+          <div>NAME OF THE STUDENT</div>
+
+          <div>
+            INDIVIDUAL<br>
+            PERCENTAGE
+          </div>
+
+          <div>
+            COLLEGE<br>
+            PASSING PERCENTAGE
+          </div>
+
+        </div>
+
+
+        <!-- ROWS -->
+
+        <div
+          class="score-row"
+          *ngFor="let student of hscScorers; let i = index"
+          [class.highest-row]="isHighestHsc(student)"
+        >
+
+          <div class="year-cell">
+
+            <span class="year-badge">
+              {{ student.year }}
+            </span>
+
+          </div>
+
+
+          <div class="student-cell">
+
+            <div class="student-number">
+              {{ i + 1 }}
+            </div>
+
+            <div class="student-info">
+
+              <strong>
+                {{ student.name }}
+              </strong>
+
+              <span>
+                HSC Top Scorer
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="individual-cell">
+
+            <strong>
+              {{ student.percentage.toFixed(2) }}%
+            </strong>
+
+            <div class="percentage-bar">
+              <span
+                [style.width.%]="student.percentage"
+              ></span>
+            </div>
+
+          </div>
+
+
+          <div class="school-cell">
+
+            <span class="school-percentage perfect">
+              {{ student.collegePassing.toFixed(2) }}%
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         ACHIEVEMENT HIGHLIGHTS
+    ================================== -->
+
+    <div class="highlight-grid">
+
+
+      <!-- SSC HIGHLIGHT -->
+
+      <div class="excellence-highlight">
+
+        <div class="highlight-icon">
+          🌟
+        </div>
+
+        <div>
+
+          <span>
+            HIGHEST SSC SCORE
+          </span>
+
+          <h3>
+            {{ highestSscScorer.name }}
+          </h3>
+
+          <p>
+            {{ highestSscScorer.year }}
+            ·
+            {{ highestSscScorer.percentage.toFixed(2) }}%
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- HSC HIGHLIGHT -->
+
+      <div class="excellence-highlight">
+
+        <div class="highlight-icon">
+          🎓
+        </div>
+
+        <div>
+
+          <span>
+            HIGHEST HSC SCORE
+          </span>
+
+          <h3>
+            {{ highestHscScorer.name }}
+          </h3>
+
+          <p>
+            {{ highestHscScorer.year }}
+            ·
+            {{ highestHscScorer.percentage.toFixed(2) }}%
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- MERIT LIST -->
+
+    <section class="merit-section">
+
+      <div class="merit-icon">
+        📸
+      </div>
+
+      <div>
+
+        <span class="section-label">
+          MERIT LIST
+        </span>
+
+        <h2>
+          Photos of Merit List of SSC and HSC
+        </h2>
+
+        <p>
+          Photos of students who have achieved academic excellence
+          in SSC and HSC examinations will be showcased here.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+</section>

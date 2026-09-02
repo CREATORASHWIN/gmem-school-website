@@ -1,0 +1,125 @@
+<section class="extra-page">
+
+  <!-- HERO -->
+  <div class="extra-hero">
+
+    <div class="hero-shape hero-shape-one"></div>
+    <div class="hero-shape hero-shape-two"></div>
+
+    <div class="hero-content">
+
+      <span class="hero-label">
+        STUDENT DEVELOPMENT
+      </span>
+
+      <h1>
+        Extra Curricular Activities
+      </h1>
+
+      <p>
+        Encouraging students to discover their talents, express their
+        creativity and develop confidence beyond the classroom.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- CONTENT -->
+  <div class="extra-container">
+
+    <!-- INTRO -->
+    <div class="intro-card">
+
+      <div class="intro-icon">
+        🌟
+      </div>
+
+      <div>
+
+        <span class="section-label">
+          BEYOND THE CLASSROOM
+        </span>
+
+        <h2>
+          Exploring Talent &amp; Creativity
+        </h2>
+
+        <p>
+          Students are encouraged to participate in various inter-school
+          competitions and talent search competitions. These activities
+          provide valuable opportunities to develop knowledge, creativity,
+          communication skills, confidence and teamwork.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ACTIVITY GRID -->
+    <div class="activity-grid">
+
+      <article
+        class="activity-card"
+        *ngFor="let activity of activities"
+      >
+
+        <div class="card-top">
+
+          <div class="activity-number">
+            {{ activity.number < 10 ? '0' + activity.number : activity.number }}
+          </div>
+
+          <div class="activity-icon">
+            {{ activity.icon }}
+          </div>
+
+        </div>
+
+
+        <h3>
+          {{ activity.title }}
+        </h3>
+
+
+        <p>
+          {{ activity.description }}
+        </p>
+
+
+        <div class="card-line"></div>
+
+      </article>
+
+    </div>
+
+
+    <!-- CLOSING -->
+    <div class="closing-card">
+
+      <div class="closing-icon">
+        🏆
+      </div>
+
+      <div>
+
+        <h2>
+          Learning Through Participation
+        </h2>
+
+        <p>
+          Every competition and activity gives our students a chance to
+          learn, participate, perform and grow. We believe that education
+          becomes more meaningful when students are given opportunities
+          to explore their interests and talents.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

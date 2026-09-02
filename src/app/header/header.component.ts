@@ -14,11 +14,18 @@ type NavItem = {
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
+
   menuOpen = false;
 
   navItems: NavItem[] = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
+    { label: 'School Activities', path: '/school-activities' },
+    { label: 'Annual Report', path: '/annual-report' },
+    { label: 'Our Staff', path: '/our-staff' },
+    { label: 'School Information', path: '/school-information' },
+    { label: 'Academic Excellence', path: '/academic-excellence' },
+    { label: 'Extra-Curricular Activities', path: '/extra-curricular-activities' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'News', path: '/news' },
     { label: 'Achievements', path: '/achievements' },

@@ -1,0 +1,687 @@
+/* ================================
+   PAGE
+================================ */
+
+.staff-page {
+  min-height: 100vh;
+  padding-bottom: 80px;
+  background: #f8fafc;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.staff-hero {
+  position: relative;
+
+  min-height: 360px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #1e3a8a 55%,
+      #2563eb 100%
+    );
+
+  color: #ffffff;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 125px 6% 65px;
+}
+
+
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  padding: 7px 15px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.1);
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.staff-hero h1 {
+  max-width: 800px;
+
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size: 50px;
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+
+.staff-hero p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: rgba(255,255,255,0.8);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* HERO DECORATION */
+
+.hero-decoration {
+  position: absolute;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 50%;
+}
+
+
+.hero-decoration-one {
+  width: 480px;
+  height: 480px;
+
+  top: -220px;
+  right: -120px;
+}
+
+
+.hero-decoration-two {
+  width: 280px;
+  height: 280px;
+
+  right: 180px;
+  bottom: -210px;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.staff-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 60px 6% 0;
+}
+
+
+/* ================================
+   SECTION
+================================ */
+
+.staff-section {
+  margin-bottom: 65px;
+}
+
+
+.section-top {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 25px;
+}
+
+
+.section-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+
+.section-top h2 {
+  margin: 0 0 7px;
+
+  color: #0f172a;
+
+  font-size: 32px;
+  font-weight: 900;
+
+  line-height: 1.2;
+}
+
+
+.section-top p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* MEMBER COUNT */
+
+.member-count {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  padding: 13px 18px;
+
+  background: #eff6ff;
+
+  border-radius: 999px;
+
+  color: #64748b;
+
+  white-space: nowrap;
+}
+
+
+.member-count strong {
+  color: #2563eb;
+
+  font-size: 23px;
+  font-weight: 900;
+}
+
+
+.member-count span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   STAFF TABLE
+================================ */
+
+.staff-table {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 35px rgba(15,23,42,0.06);
+}
+
+
+/* TABLE HEADER */
+
+.staff-header {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    minmax(350px, 1.5fr)
+    minmax(180px, 0.8fr)
+    minmax(150px, 0.7fr);
+
+  align-items: center;
+
+  min-height: 56px;
+
+  background: #0f172a;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: .7px;
+}
+
+
+/* ROW */
+
+.staff-row {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    minmax(350px, 1.5fr)
+    minmax(180px, 0.8fr)
+    minmax(150px, 0.7fr);
+
+  align-items: center;
+
+  min-height: 80px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  transition:
+    background .2s ease;
+}
+
+
+.staff-row:last-child {
+  border-bottom: none;
+}
+
+
+.staff-row:hover {
+  background: #f8fafc;
+}
+
+
+/* ================================
+   COLUMNS
+================================ */
+
+.number-column,
+.teacher-column,
+.qualification-column,
+.post-column {
+  padding: 13px 22px;
+}
+
+
+.number-column {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.qualification-column {
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.post-column {
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* ================================
+   NUMBER
+================================ */
+
+.number-badge {
+  display: grid;
+
+  place-items: center;
+
+  width: 37px;
+  height: 37px;
+
+  background: #f1f5f9;
+
+  border-radius: 11px;
+
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+.staff-row:nth-child(2) .number-badge,
+.staff-row:nth-child(3) .number-badge {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+}
+
+
+/* ================================
+   TEACHER INFO
+================================ */
+
+.teacher-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.staff-avatar {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: #eff6ff;
+
+  border-radius: 13px;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+
+.teacher-name-wrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+
+.teacher-name-wrapper strong {
+  color: #0f172a;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+
+.teacher-name-wrapper span {
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ================================
+   POST BADGE
+================================ */
+
+.post-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 8px 13px;
+
+  background: #f1f5f9;
+
+  border-radius: 999px;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+.post-badge.senior-post {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+}
+
+
+/* ================================
+   NON-TEACHING
+================================ */
+
+.non-teaching-section {
+  padding-top: 5px;
+}
+
+
+.non-teaching-section .staff-avatar {
+  background: #f8fafc;
+
+  color: #475569;
+}
+
+
+.non-teaching-section .section-label {
+  color: #475569;
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.staff-message {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 10px;
+
+  padding: 25px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ffffff
+    );
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 18px;
+}
+
+
+.message-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: #dbeafe;
+
+  border-radius: 14px;
+
+  font-size: 24px;
+}
+
+
+.staff-message h3 {
+  margin: 0 0 5px;
+
+  color: #0f172a;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+
+.staff-message p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+  .staff-header,
+  .staff-row {
+    grid-template-columns:
+      55px
+      minmax(280px, 1.5fr)
+      minmax(150px, .8fr)
+      minmax(130px, .7fr);
+  }
+
+
+  .number-column,
+  .teacher-column,
+  .qualification-column,
+  .post-column {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 750px) {
+
+  .staff-page {
+    padding-bottom: 50px;
+  }
+
+
+  /* HERO */
+
+  .staff-hero {
+    min-height: 390px;
+  }
+
+
+  .hero-content {
+    padding: 105px 22px 55px;
+  }
+
+
+  .staff-hero h1 {
+    font-size: 36px;
+  }
+
+
+  .staff-hero p {
+    font-size: 15px;
+  }
+
+
+  /* CONTAINER */
+
+  .staff-container {
+    padding: 45px 18px 0;
+  }
+
+
+  /* SECTION HEADER */
+
+  .section-top {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+
+  .section-top h2 {
+    font-size: 25px;
+  }
+
+
+  .member-count {
+    align-self: flex-start;
+  }
+
+
+  /* TABLE */
+
+  .staff-table {
+    overflow-x: auto;
+
+    border-radius: 16px;
+  }
+
+
+  .staff-header,
+  .staff-row {
+
+    min-width: 850px;
+
+    grid-template-columns:
+      65px
+      360px
+      190px
+      170px;
+  }
+
+
+  .staff-header {
+    min-height: 52px;
+  }
+
+
+  .staff-row {
+    min-height: 75px;
+  }
+
+
+  /* MESSAGE */
+
+  .staff-message {
+    align-items: flex-start;
+
+    padding: 21px;
+  }
+
+}

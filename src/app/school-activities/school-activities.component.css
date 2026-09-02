@@ -1,0 +1,403 @@
+.activities-page {
+  min-height: 100vh;
+  padding: 120px 6% 80px;
+  background: #f8fafc;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.page-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   ACTIVITIES GRID
+========================= */
+
+.activities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================
+   ACTIVITY CARD
+========================= */
+
+.activity-card {
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.activity-icon {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 16px;
+
+  background: #eff6ff;
+
+  font-size: 28px;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.activity-card h2 {
+  margin: 0 0 18px;
+
+  color: #0f172a;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+.activity-card p {
+  margin: 0 0 16px;
+
+  color: #475569;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.activity-card p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   QUOTES
+========================= */
+
+.quote {
+  padding: 15px 18px;
+
+  margin-bottom: 20px !important;
+
+  background: #f8fafc;
+
+  border-left: 4px solid #2563eb;
+  border-radius: 0 10px 10px 0;
+
+  color: #334155 !important;
+
+  font-size: 15px !important;
+  font-style: italic;
+
+  line-height: 1.7 !important;
+}
+
+
+/* =========================
+   SCHOOL HOUSES
+========================= */
+
+.houses {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin: 20px 0 22px;
+}
+
+.house {
+  padding: 9px 17px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.house.red {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.house.green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.house.blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.house.yellow {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+
+/* =========================
+   TOPIC LIST
+========================= */
+
+.topic-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+.topic-list span {
+  padding: 8px 13px;
+
+  background: #f1f5f9;
+
+  border-radius: 999px;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   NORMAL LIST
+========================= */
+
+.activity-list {
+  margin: 18px 0 20px;
+
+  padding-left: 22px;
+
+  color: #475569;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+}
+
+.activity-list li {
+  margin-bottom: 5px;
+}
+
+
+/* =========================
+   TEACHER LIST
+========================= */
+
+.teacher-list {
+  margin: 20px 0 0;
+
+  padding-left: 25px;
+
+  color: #475569;
+
+  font-size: 16px;
+
+  line-height: 2;
+}
+
+.teacher-list li {
+  padding-left: 5px;
+}
+
+
+/* =========================
+   FIELD TRIP PLACES
+========================= */
+
+.places-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin: 20px 0 24px;
+}
+
+.places-grid span {
+  padding: 10px 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   TEACHER AWARDS
+========================= */
+
+.awards-card {
+  border-top: 4px solid #f59e0b;
+}
+
+
+/* =========================
+   SCHOOL MOTTO
+========================= */
+
+.motto-card {
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #eff6ff 100%
+  );
+}
+
+.motto-card .activity-icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.motto {
+  display: inline-block;
+
+  margin: 5px 0 22px;
+
+  color: #1d4ed8;
+
+  font-size: 25px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .activities-page {
+    padding: 110px 4% 60px;
+  }
+
+  .activities-container {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: 40px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .activities-page {
+    padding: 100px 18px 50px;
+  }
+
+  .page-header {
+    margin-bottom: 40px;
+  }
+
+  .page-header h1 {
+    font-size: 34px;
+  }
+
+  .page-header p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .activity-card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .activity-card h2 {
+    font-size: 22px;
+  }
+
+  .activity-card p {
+    font-size: 15px;
+  }
+
+  .places-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .motto {
+    font-size: 20px;
+  }
+}

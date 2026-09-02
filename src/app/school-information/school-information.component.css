@@ -1,0 +1,874 @@
+/* =================================
+   SCHOOL INFORMATION PAGE
+================================= */
+
+.school-info-page {
+  min-height: 100vh;
+  padding-bottom: 80px;
+  background: #f8fafc;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.info-hero {
+  position: relative;
+
+  min-height: 380px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #172554 50%,
+      #1d4ed8 100%
+    );
+
+  color: #ffffff;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 125px 6% 65px;
+}
+
+
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 17px;
+
+  padding: 8px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.info-hero h1 {
+  max-width: 800px;
+
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size: 50px;
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+
+.info-hero p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   HERO CIRCLES
+================================= */
+
+.hero-circle {
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 50%;
+}
+
+
+.hero-circle-one {
+  width: 520px;
+  height: 520px;
+
+  top: -270px;
+  right: -100px;
+}
+
+
+.hero-circle-two {
+  width: 300px;
+  height: 300px;
+
+  right: 260px;
+  bottom: -220px;
+}
+
+
+/* =================================
+   MAIN CONTAINER
+================================= */
+
+.info-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 55px 6% 0;
+}
+
+
+/* =================================
+   INFORMATION SECTION
+================================= */
+
+.info-section {
+  margin-bottom: 55px;
+}
+
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+.section-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 16px;
+
+  font-size: 27px;
+
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.08);
+}
+
+
+.section-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+
+.section-heading h2 {
+  margin: 0 0 5px;
+
+  color: #0f172a;
+
+  font-size: 30px;
+  font-weight: 900;
+
+  line-height: 1.2;
+}
+
+
+.section-heading p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =================================
+   TIMING BLOCK
+================================= */
+
+.timing-block {
+  overflow: hidden;
+
+  margin-bottom: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+
+.timing-block:last-child {
+  margin-bottom: 0;
+}
+
+
+.timing-title {
+  padding: 14px 22px;
+
+  background: #0f172a;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+
+.timing-table {
+  width: 100%;
+}
+
+
+.timing-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 58px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+
+.timing-row:last-child {
+  border-bottom: none;
+}
+
+
+.timing-row > div {
+  display: flex;
+
+  align-items: center;
+
+  padding: 13px 22px;
+}
+
+
+.class-name {
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.time {
+  justify-content: flex-end;
+
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  text-align: right;
+}
+
+
+.time.holiday {
+  color: #dc2626;
+
+  font-weight: 900;
+}
+
+
+/* SATURDAY */
+
+.saturday-block {
+  border-color: #bfdbfe;
+}
+
+
+.saturday-block .timing-title {
+  background:
+    linear-gradient(
+      90deg,
+      #1d4ed8,
+      #2563eb
+    );
+}
+
+
+/* =================================
+   UNIFORM
+================================= */
+
+.uniform-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+.uniform-header,
+.uniform-row {
+  display: grid;
+
+  grid-template-columns: 150px 160px minmax(0, 1fr);
+
+  align-items: center;
+}
+
+
+.uniform-header {
+  min-height: 62px;
+
+  background: #0f172a;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+.uniform-header span,
+.uniform-row > div {
+  padding: 14px 20px;
+}
+
+
+.uniform-row {
+  min-height: 70px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  transition: background 0.2s ease;
+}
+
+
+.uniform-row:last-child {
+  border-bottom: none;
+}
+
+
+.uniform-row:hover {
+  background: #f8fafc;
+}
+
+
+.uniform-class {
+  color: #1d4ed8;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+
+.uniform-gender {
+  color: #475569;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.uniform-details {
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =================================
+   ADMISSION
+================================= */
+
+.admission-section {
+  margin-bottom: 35px;
+}
+
+
+.admission-icon {
+  background: #eff6ff;
+}
+
+
+.admission-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ADMISSION INTRO */
+
+.admission-intro {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ffffff
+    );
+
+  border-bottom: 1px solid #dbeafe;
+}
+
+
+.admission-symbol {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: #dbeafe;
+
+  border-radius: 15px;
+
+  font-size: 27px;
+}
+
+
+.admission-intro h3 {
+  margin: 0 0 6px;
+
+  color: #0f172a;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+
+.admission-intro p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =================================
+   DOCUMENTS
+================================= */
+
+.documents-section {
+  padding: 28px;
+}
+
+
+.documents-section h3 {
+  margin: 0 0 20px;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+.document-list {
+  display: grid;
+
+  gap: 11px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.document-list li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.6;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.document-list li:hover {
+  background: #eff6ff;
+
+  border-color: #bfdbfe;
+
+  transform: translateX(3px);
+}
+
+
+.document-number {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: #2563eb;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+
+.document-list small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* =================================
+   BOTTOM MESSAGE
+================================= */
+
+.info-message {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 24px 26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ffffff
+    );
+
+  border: 1px solid #bfdbfe;
+
+  border-radius: 18px;
+}
+
+
+.message-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: #dbeafe;
+
+  border-radius: 14px;
+
+  font-size: 23px;
+}
+
+
+.info-message h3 {
+  margin: 0 0 5px;
+
+  color: #0f172a;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+
+.info-message p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .info-hero h1 {
+    font-size: 42px;
+  }
+
+
+  .uniform-header,
+  .uniform-row {
+    grid-template-columns: 120px 130px minmax(300px, 1fr);
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+  .school-info-page {
+    padding-bottom: 50px;
+  }
+
+
+  /* HERO */
+
+  .info-hero {
+    min-height: 390px;
+  }
+
+
+  .hero-content {
+    padding: 105px 22px 55px;
+  }
+
+
+  .info-hero h1 {
+    font-size: 36px;
+  }
+
+
+  .info-hero p {
+    font-size: 15px;
+  }
+
+
+  /* CONTAINER */
+
+  .info-container {
+    padding: 40px 18px 0;
+  }
+
+
+  /* SECTION HEADING */
+
+  .section-heading {
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+
+  .section-icon {
+    width: 50px;
+    height: 50px;
+
+    font-size: 23px;
+  }
+
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+
+  .section-heading p {
+    font-size: 13px;
+  }
+
+
+  /* TIMING */
+
+  .timing-row {
+    grid-template-columns: 1fr;
+  }
+
+
+  .timing-row > div {
+    padding: 11px 17px;
+  }
+
+
+  .time {
+    justify-content: flex-start;
+
+    padding-top: 0 !important;
+
+    color: #2563eb;
+
+    text-align: left;
+  }
+
+
+  .timing-title {
+    padding: 13px 17px;
+  }
+
+
+  /* UNIFORM */
+
+  .uniform-card {
+    overflow-x: auto;
+  }
+
+
+  .uniform-header,
+  .uniform-row {
+    min-width: 620px;
+
+    grid-template-columns: 120px 130px 370px;
+  }
+
+
+  .uniform-header span,
+  .uniform-row > div {
+    padding: 13px 16px;
+  }
+
+
+  /* ADMISSION */
+
+  .admission-intro {
+    align-items: flex-start;
+
+    padding: 22px;
+
+    gap: 14px;
+  }
+
+
+  .admission-symbol {
+    width: 50px;
+    height: 50px;
+
+    font-size: 23px;
+  }
+
+
+  .admission-intro h3 {
+    font-size: 20px;
+  }
+
+
+  .documents-section {
+    padding: 22px;
+  }
+
+
+  .documents-section h3 {
+    font-size: 17px;
+  }
+
+
+  .document-list li {
+    padding: 12px;
+  }
+
+
+  /* MESSAGE */
+
+  .info-message {
+    align-items: flex-start;
+
+    padding: 20px;
+  }
+
+
+  .message-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 21px;
+  }
+
+}
