@@ -1,215 +1,293 @@
-<main class="min-h-screen bg-slate-50 pt-20">
+<header class="fixed top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm">
 
-  <!-- CONTACT HERO -->
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  <!-- HEADER CONTAINER -->
+  <div class="flex h-20 w-full items-center px-4 sm:px-6 lg:px-8">
 
-    <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+    <!-- ================= LOGO ================= -->
+    <a
+      routerLink="/"
+      class="flex w-[190px] shrink-0 items-center gap-3">
 
-      <!-- LEFT -->
-      <div>
-
-        <span
-          class="text-sm font-black uppercase tracking-wide text-blue-700"
-        >
-          Contact
-        </span>
-
-        <h1
-          class="mt-4 max-w-xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl"
-        >
-          Speak with Gandhi Memorial English High School.
-        </h1>
-
-        <p
-          class="mt-6 max-w-xl text-lg leading-8 text-slate-600"
-        >
-          For admissions, school visits, certificates or general enquiries,
-          contact the office by email or visit the nearest campus.
-        </p>
-
-
-        <!-- EMAIL -->
-        <div
-          class="mt-8 rounded-xl border border-blue-100 bg-blue-50 p-6"
-        >
-          <p
-            class="text-sm font-black uppercase tracking-wide text-blue-700"
-          >
-            Email
-          </p>
-
-          <a
-            href="mailto:gmes2010@yahoo.in"
-            class="mt-2 block text-xl font-black text-slate-950 transition hover:text-blue-700 sm:text-2xl"
-          >
-            gmes2010@yahoo.in
-          </a>
-        </div>
-
-
-        <!-- QUICK INFO -->
-        <div class="mt-6 grid gap-4 sm:grid-cols-2">
-
-          <div
-            class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
-          >
-            <p class="text-xs font-black uppercase tracking-wide text-blue-700">
-              Phone
-            </p>
-
-            <p class="mt-2 font-bold text-slate-900">
-              Contact School Office
-            </p>
-          </div>
-
-          <div
-            class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
-          >
-            <p class="text-xs font-black uppercase tracking-wide text-blue-700">
-              Enquiries
-            </p>
-
-            <p class="mt-2 font-bold text-slate-900">
-              Admissions & General
-            </p>
-          </div>
-
-        </div>
-
+      <!-- GM LOGO -->
+      <div
+        class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-700 text-lg font-black text-white shadow-sm">
+        GM
       </div>
 
-
-      <!-- RIGHT -->
-      <div class="space-y-5">
-
-        <!-- OFFICE -->
-        <div
-          class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
-        >
-          <div class="flex items-start gap-4">
-
-            <div
-              class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-700 text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17.657 16.657L13.414 21a2 2 0 01-2.828 0l-4.243-4.343a8 8 0 1111.314 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
-
-            <div>
-              <p
-                class="text-sm font-black uppercase tracking-wide text-blue-700"
-              >
-                Office
-              </p>
-
-              <p
-                class="mt-2 text-lg font-bold leading-7 text-slate-950 sm:text-xl"
-              >
-                X-41A, Old RP Nagar, 60 Feet Road,
-                ML Camp, Mumbai - 400019
-              </p>
-            </div>
-
-          </div>
+      <!-- SCHOOL NAME -->
+      <div class="min-w-0">
+        <div class="whitespace-nowrap text-[14px] font-black leading-tight text-slate-950">
+          GANDHI MEMORIAL
         </div>
 
-
-        <!-- HIGH SCHOOL -->
-        <div
-          class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
-        >
-          <div class="flex items-start gap-4">
-
-            <div
-              class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-50 text-blue-700"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 12v5c3 2 7 3 7 3s4-1 7-3v-5"
-                />
-              </svg>
-            </div>
-
-            <div>
-              <p
-                class="text-sm font-black uppercase tracking-wide text-blue-700"
-              >
-                High School
-              </p>
-
-              <p
-                class="mt-2 text-lg font-bold leading-7 text-slate-950"
-              >
-                Gandhi Memorial English High School, Mumbai
-              </p>
-            </div>
-
-          </div>
+        <div class="whitespace-nowrap text-[10px] font-bold tracking-wide text-slate-500">
+          ENGLISH HIGH SCHOOL
         </div>
-
-
-        <!-- CONTACT CTA -->
-        <div
-          class="rounded-2xl bg-blue-700 p-7 text-white shadow-lg shadow-blue-900/20"
-        >
-          <p class="text-sm font-bold uppercase tracking-wide text-blue-100">
-            Admissions
-          </p>
-
-          <h2 class="mt-2 text-2xl font-black">
-            Have a question?
-          </h2>
-
-          <p class="mt-2 leading-7 text-blue-100">
-            Reach out to the school office for admissions,
-            certificates and general enquiries.
-          </p>
-
-          <a
-            href="mailto:gmes2010@yahoo.in"
-            class="mt-5 inline-flex rounded-lg bg-white px-5 py-3 text-sm font-black text-blue-700 transition hover:bg-blue-50"
-          >
-            Email the School
-          </a>
-        </div>
-
       </div>
 
-    </div>
+    </a>
 
-  </section>
 
-</main>
+    <!-- ================= NAVIGATION ================= -->
+    <nav
+      class="ml-4 flex min-w-0 flex-1 items-center justify-end overflow-hidden xl:flex">
+
+      <!-- HOME -->
+      <a
+        routerLink="/"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Home
+      </a>
+
+      <!-- ABOUT -->
+      <a
+        routerLink="/about"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        About
+      </a>
+
+      <!-- SCHOOL ACTIVITIES -->
+      <a
+        routerLink="/school-activities"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        School Activities
+      </a>
+
+      <!-- ANNUAL REPORT -->
+      <a
+        routerLink="/annual-report"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Annual Report
+      </a>
+
+      <!-- OUR STAFF -->
+      <a
+        routerLink="/staff"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Our Staff
+      </a>
+
+      <!-- SCHOOL INFORMATION -->
+      <a
+        routerLink="/school-information"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        School Information
+      </a>
+
+      <!-- ACADEMIC EXCELLENCE -->
+      <a
+        routerLink="/academic-excellence"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Academic Excellence
+      </a>
+
+      <!-- EXTRA CURRICULAR -->
+      <a
+        routerLink="/extra-curricular-activities"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Extra-Curricular Activities
+      </a>
+
+      <!-- GALLERY -->
+      <a
+        routerLink="/gallery"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Gallery
+      </a>
+
+      <!-- NEWS -->
+      <a
+        routerLink="/news"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        News
+      </a>
+
+      <!-- ACHIEVEMENTS -->
+      <a
+        routerLink="/achievements"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Achievements
+      </a>
+
+      <!-- EVENTS -->
+      <a
+        routerLink="/events"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Events
+      </a>
+
+      <!-- CONTACT -->
+      <a
+        routerLink="/contact"
+        routerLinkActive="bg-blue-50 text-blue-700"
+        class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
+        Contact
+      </a>
+
+    </nav>
+
+
+    <!-- ================= MOBILE BUTTON ================= -->
+    <button
+      type="button"
+      (click)="toggleMenu()"
+      class="ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-700 xl:hidden"
+      aria-label="Toggle navigation">
+
+      <!-- OPEN -->
+      <svg
+        *ngIf="!menuOpen"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16">
+        </path>
+
+      </svg>
+
+      <!-- CLOSE -->
+      <svg
+        *ngIf="menuOpen"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12">
+        </path>
+
+      </svg>
+
+    </button>
+
+  </div>
+
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div
+    *ngIf="menuOpen"
+    class="border-t border-slate-200 bg-white shadow-lg xl:hidden">
+
+    <nav class="max-h-[calc(100vh-80px)] overflow-y-auto px-4 py-4">
+
+      <a
+        routerLink="/"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Home
+      </a>
+
+      <a
+        routerLink="/about"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        About
+      </a>
+
+      <a
+        routerLink="/school-activities"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        School Activities
+      </a>
+
+      <a
+        routerLink="/annual-report"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Annual Report
+      </a>
+
+      <a
+        routerLink="/staff"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Our Staff
+      </a>
+
+      <a
+        routerLink="/school-information"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        School Information
+      </a>
+
+      <a
+        routerLink="/academic-excellence"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Academic Excellence
+      </a>
+
+      <a
+        routerLink="/extra-curricular-activities"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Extra-Curricular Activities
+      </a>
+
+      <a
+        routerLink="/gallery"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Gallery
+      </a>
+
+      <a
+        routerLink="/news"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        News
+      </a>
+
+      <a
+        routerLink="/achievements"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Achievements
+      </a>
+
+      <a
+        routerLink="/events"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Events
+      </a>
+
+      <a
+        routerLink="/contact"
+        (click)="closeMenu()"
+        class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
