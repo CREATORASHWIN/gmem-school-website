@@ -28,7 +28,7 @@
     </a>
 
 
-    <!-- ================= NAVIGATION ================= -->
+    <!-- ================= DESKTOP NAVIGATION ================= -->
     <nav
       class="ml-4 flex min-w-0 flex-1 items-center justify-end overflow-hidden xl:flex">
 
@@ -67,7 +67,7 @@
 
       <!-- OUR STAFF -->
       <a
-        routerLink="/staff"
+        routerLink="/our-staff"
         routerLinkActive="bg-blue-50 text-blue-700"
         class="shrink-0 whitespace-nowrap rounded-lg px-1.5 py-2 text-[12px] font-bold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700">
         Our Staff
@@ -147,7 +147,7 @@
       class="ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-700 xl:hidden"
       aria-label="Toggle navigation">
 
-      <!-- OPEN -->
+      <!-- OPEN ICON -->
       <svg
         *ngIf="!menuOpen"
         xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +165,7 @@
 
       </svg>
 
-      <!-- CLOSE -->
+      <!-- CLOSE ICON -->
       <svg
         *ngIf="menuOpen"
         xmlns="http://www.w3.org/2000/svg"
@@ -195,6 +195,7 @@
 
     <nav class="max-h-[calc(100vh-80px)] overflow-y-auto px-4 py-4">
 
+      <!-- HOME -->
       <a
         routerLink="/"
         (click)="closeMenu()"
@@ -202,6 +203,7 @@
         Home
       </a>
 
+      <!-- ABOUT -->
       <a
         routerLink="/about"
         (click)="closeMenu()"
@@ -209,6 +211,7 @@
         About
       </a>
 
+      <!-- SCHOOL ACTIVITIES -->
       <a
         routerLink="/school-activities"
         (click)="closeMenu()"
@@ -216,6 +219,7 @@
         School Activities
       </a>
 
+      <!-- ANNUAL REPORT -->
       <a
         routerLink="/annual-report"
         (click)="closeMenu()"
@@ -223,13 +227,15 @@
         Annual Report
       </a>
 
+      <!-- OUR STAFF - FIXED -->
       <a
-        routerLink="/staff"
+        routerLink="/our-staff"
         (click)="closeMenu()"
         class="block rounded-lg px-4 py-3 font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700">
         Our Staff
       </a>
 
+      <!-- SCHOOL INFORMATION -->
       <a
         routerLink="/school-information"
         (click)="closeMenu()"
@@ -237,6 +243,7 @@
         School Information
       </a>
 
+      <!-- ACADEMIC EXCELLENCE -->
       <a
         routerLink="/academic-excellence"
         (click)="closeMenu()"
@@ -244,6 +251,7 @@
         Academic Excellence
       </a>
 
+      <!-- EXTRA CURRICULAR -->
       <a
         routerLink="/extra-curricular-activities"
         (click)="closeMenu()"
@@ -251,6 +259,7 @@
         Extra-Curricular Activities
       </a>
 
+      <!-- GALLERY -->
       <a
         routerLink="/gallery"
         (click)="closeMenu()"
@@ -258,6 +267,7 @@
         Gallery
       </a>
 
+      <!-- NEWS -->
       <a
         routerLink="/news"
         (click)="closeMenu()"
@@ -265,6 +275,7 @@
         News
       </a>
 
+      <!-- ACHIEVEMENTS -->
       <a
         routerLink="/achievements"
         (click)="closeMenu()"
@@ -272,6 +283,7 @@
         Achievements
       </a>
 
+      <!-- EVENTS -->
       <a
         routerLink="/events"
         (click)="closeMenu()"
@@ -279,6 +291,7 @@
         Events
       </a>
 
+      <!-- CONTACT -->
       <a
         routerLink="/contact"
         (click)="closeMenu()"
