@@ -1,29 +1,34 @@
-<header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-xl">
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-xl"
+>
+  <div
+    class="mx-auto flex h-20 w-full max-w-[1500px] items-center px-4 sm:px-6 lg:px-8"
+  >
 
-  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
-    <!-- Logo -->
+    <!-- LOGO -->
     <a
       routerLink="/"
-      class="flex min-w-0 items-center gap-3 text-left"
+      class="flex w-[250px] shrink-0 items-center gap-3"
       aria-label="Go to home"
       (click)="closeMenu()"
     >
+      <!-- Logo Box -->
       <span
         class="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-blue-700 text-sm font-black text-white shadow-lg shadow-blue-900/20"
       >
         GM
       </span>
 
-      <span class="min-w-0">
+      <!-- Logo Text -->
+      <span class="min-w-0 whitespace-nowrap">
         <span
-          class="block text-sm font-black uppercase leading-tight tracking-wide text-slate-950 sm:text-base"
+          class="block text-[15px] font-black uppercase leading-tight tracking-wide text-slate-950"
         >
           Gandhi Memorial
         </span>
 
         <span
-          class="block text-xs font-semibold uppercase tracking-wider text-slate-500"
+          class="block text-[11px] font-semibold uppercase tracking-wider text-slate-500"
         >
           English High School
         </span>
@@ -31,38 +36,36 @@
     </a>
 
 
-    <!-- Desktop Navigation -->
+    <!-- DESKTOP NAVIGATION -->
     <nav
-      class="hidden items-center gap-1 lg:flex"
+      class="hidden flex-1 items-center justify-center gap-0 lg:flex"
       aria-label="Primary navigation"
     >
-
       <a
         *ngFor="let item of navItems"
         [routerLink]="item.path"
         routerLinkActive="bg-blue-50 text-blue-700"
         [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-        class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
+        class="whitespace-nowrap rounded-md px-2 py-2 text-[13px] font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 xl:px-2.5"
       >
         {{ item.label }}
       </a>
-
     </nav>
 
 
-    <!-- Admissions Button -->
+    <!-- ADMISSIONS BUTTON -->
     <a
       routerLink="/contact"
-      class="hidden rounded-md bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800 md:inline-flex"
+      class="ml-3 hidden shrink-0 items-center justify-center rounded-md bg-blue-700 px-4 py-3 text-center text-[13px] font-bold leading-tight text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800 lg:inline-flex xl:px-5"
     >
       Admissions Enquiry
     </a>
 
 
-    <!-- Mobile Menu Button -->
+    <!-- MOBILE MENU BUTTON -->
     <button
       type="button"
-      class="grid h-11 w-11 place-items-center rounded-md border border-slate-200 text-slate-800 lg:hidden"
+      class="ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-md border border-slate-200 text-slate-800 lg:hidden"
       (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen"
       aria-label="Toggle navigation"
@@ -107,7 +110,7 @@
   </div>
 
 
-  <!-- Mobile Navigation -->
+  <!-- MOBILE NAVIGATION -->
   <nav
     *ngIf="menuOpen"
     class="border-t border-slate-100 bg-white px-4 py-3 shadow-xl lg:hidden"
@@ -119,10 +122,19 @@
       [routerLink]="item.path"
       routerLinkActive="bg-blue-50 text-blue-700"
       [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-      class="block w-full rounded-md px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+      class="block w-full rounded-md px-3 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
       (click)="closeMenu()"
     >
       {{ item.label }}
+    </a>
+
+    <!-- Mobile Admissions -->
+    <a
+      routerLink="/contact"
+      class="mt-2 block rounded-md bg-blue-700 px-4 py-3 text-center text-sm font-bold text-white"
+      (click)="closeMenu()"
+    >
+      Admissions Enquiry
     </a>
 
   </nav>
