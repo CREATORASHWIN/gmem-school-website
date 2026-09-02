@@ -1,142 +1,215 @@
-<header
-  class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-xl"
->
-  <div
-    class="mx-auto flex h-20 w-full max-w-[1500px] items-center px-4 sm:px-6 lg:px-8"
-  >
+<main class="min-h-screen bg-slate-50 pt-20">
 
-    <!-- LOGO -->
-    <a
-      routerLink="/"
-      class="flex w-[250px] shrink-0 items-center gap-3"
-      aria-label="Go to home"
-      (click)="closeMenu()"
-    >
-      <!-- Logo Box -->
-      <span
-        class="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-blue-700 text-sm font-black text-white shadow-lg shadow-blue-900/20"
-      >
-        GM
-      </span>
+  <!-- CONTACT HERO -->
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 
-      <!-- Logo Text -->
-      <span class="min-w-0 whitespace-nowrap">
-        <span
-          class="block text-[15px] font-black uppercase leading-tight tracking-wide text-slate-950"
-        >
-          Gandhi Memorial
-        </span>
+    <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+
+      <!-- LEFT -->
+      <div>
 
         <span
-          class="block text-[11px] font-semibold uppercase tracking-wider text-slate-500"
+          class="text-sm font-black uppercase tracking-wide text-blue-700"
         >
-          English High School
+          Contact
         </span>
-      </span>
-    </a>
+
+        <h1
+          class="mt-4 max-w-xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl"
+        >
+          Speak with Gandhi Memorial English High School.
+        </h1>
+
+        <p
+          class="mt-6 max-w-xl text-lg leading-8 text-slate-600"
+        >
+          For admissions, school visits, certificates or general enquiries,
+          contact the office by email or visit the nearest campus.
+        </p>
 
 
-    <!-- DESKTOP NAVIGATION -->
-    <nav
-      class="hidden flex-1 items-center justify-center gap-0 lg:flex"
-      aria-label="Primary navigation"
-    >
-      <a
-        *ngFor="let item of navItems"
-        [routerLink]="item.path"
-        routerLinkActive="bg-blue-50 text-blue-700"
-        [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-        class="whitespace-nowrap rounded-md px-2 py-2 text-[13px] font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 xl:px-2.5"
-      >
-        {{ item.label }}
-      </a>
-    </nav>
+        <!-- EMAIL -->
+        <div
+          class="mt-8 rounded-xl border border-blue-100 bg-blue-50 p-6"
+        >
+          <p
+            class="text-sm font-black uppercase tracking-wide text-blue-700"
+          >
+            Email
+          </p>
+
+          <a
+            href="mailto:gmes2010@yahoo.in"
+            class="mt-2 block text-xl font-black text-slate-950 transition hover:text-blue-700 sm:text-2xl"
+          >
+            gmes2010@yahoo.in
+          </a>
+        </div>
 
 
-    <!-- ADMISSIONS BUTTON -->
-    <a
-      routerLink="/contact"
-      class="ml-3 hidden shrink-0 items-center justify-center rounded-md bg-blue-700 px-4 py-3 text-center text-[13px] font-bold leading-tight text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800 lg:inline-flex xl:px-5"
-    >
-      Admissions Enquiry
-    </a>
+        <!-- QUICK INFO -->
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+
+          <div
+            class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+          >
+            <p class="text-xs font-black uppercase tracking-wide text-blue-700">
+              Phone
+            </p>
+
+            <p class="mt-2 font-bold text-slate-900">
+              Contact School Office
+            </p>
+          </div>
+
+          <div
+            class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+          >
+            <p class="text-xs font-black uppercase tracking-wide text-blue-700">
+              Enquiries
+            </p>
+
+            <p class="mt-2 font-bold text-slate-900">
+              Admissions & General
+            </p>
+          </div>
+
+        </div>
+
+      </div>
 
 
-    <!-- MOBILE MENU BUTTON -->
-    <button
-      type="button"
-      class="ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-md border border-slate-200 text-slate-800 lg:hidden"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="menuOpen"
-      aria-label="Toggle navigation"
-    >
+      <!-- RIGHT -->
+      <div class="space-y-5">
 
-      <!-- Menu Icon -->
-      <svg
-        *ngIf="!menuOpen"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 7h16M4 12h16M4 17h16"
-        />
-      </svg>
+        <!-- OFFICE -->
+        <div
+          class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
+        >
+          <div class="flex items-start gap-4">
 
-      <!-- Close Icon -->
-      <svg
-        *ngIf="menuOpen"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </svg>
+            <div
+              class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-700 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 21a2 2 0 01-2.828 0l-4.243-4.343a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
 
-    </button>
+            <div>
+              <p
+                class="text-sm font-black uppercase tracking-wide text-blue-700"
+              >
+                Office
+              </p>
 
-  </div>
+              <p
+                class="mt-2 text-lg font-bold leading-7 text-slate-950 sm:text-xl"
+              >
+                X-41A, Old RP Nagar, 60 Feet Road,
+                ML Camp, Mumbai - 400019
+              </p>
+            </div>
+
+          </div>
+        </div>
 
 
-  <!-- MOBILE NAVIGATION -->
-  <nav
-    *ngIf="menuOpen"
-    class="border-t border-slate-100 bg-white px-4 py-3 shadow-xl lg:hidden"
-    aria-label="Mobile navigation"
-  >
+        <!-- HIGH SCHOOL -->
+        <div
+          class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
+        >
+          <div class="flex items-start gap-4">
 
-    <a
-      *ngFor="let item of navItems"
-      [routerLink]="item.path"
-      routerLinkActive="bg-blue-50 text-blue-700"
-      [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-      class="block w-full rounded-md px-3 py-3 text-left text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
-      (click)="closeMenu()"
-    >
-      {{ item.label }}
-    </a>
+            <div
+              class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-50 text-blue-700"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 12v5c3 2 7 3 7 3s4-1 7-3v-5"
+                />
+              </svg>
+            </div>
 
-    <!-- Mobile Admissions -->
-    <a
-      routerLink="/contact"
-      class="mt-2 block rounded-md bg-blue-700 px-4 py-3 text-center text-sm font-bold text-white"
-      (click)="closeMenu()"
-    >
-      Admissions Enquiry
-    </a>
+            <div>
+              <p
+                class="text-sm font-black uppercase tracking-wide text-blue-700"
+              >
+                High School
+              </p>
 
-  </nav>
+              <p
+                class="mt-2 text-lg font-bold leading-7 text-slate-950"
+              >
+                Gandhi Memorial English High School, Mumbai
+              </p>
+            </div>
 
-</header>
+          </div>
+        </div>
+
+
+        <!-- CONTACT CTA -->
+        <div
+          class="rounded-2xl bg-blue-700 p-7 text-white shadow-lg shadow-blue-900/20"
+        >
+          <p class="text-sm font-bold uppercase tracking-wide text-blue-100">
+            Admissions
+          </p>
+
+          <h2 class="mt-2 text-2xl font-black">
+            Have a question?
+          </h2>
+
+          <p class="mt-2 leading-7 text-blue-100">
+            Reach out to the school office for admissions,
+            certificates and general enquiries.
+          </p>
+
+          <a
+            href="mailto:gmes2010@yahoo.in"
+            class="mt-5 inline-flex rounded-lg bg-white px-5 py-3 text-sm font-black text-blue-700 transition hover:bg-blue-50"
+          >
+            Email the School
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
