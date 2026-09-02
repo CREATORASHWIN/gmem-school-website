@@ -16,6 +16,10 @@ interface StaffMember {
 })
 export class OurStaffComponent {
 
+  /* =====================================================
+     TEACHING STAFF
+  ===================================================== */
+
   teachingStaff: StaffMember[] = [
 
     {
@@ -98,7 +102,7 @@ export class OurStaffComponent {
 
     {
       name: 'Ms. Susheela yadav',
-      qualification: 'B.A. B. Ed Ed',
+      qualification: 'B.A. B.Ed',
       post: 'Asst. Teacher'
     },
 
@@ -183,6 +187,10 @@ export class OurStaffComponent {
   ];
 
 
+  /* =====================================================
+     NON-TEACHING STAFF
+  ===================================================== */
+
   nonTeachingStaff: StaffMember[] = [
 
     {
@@ -194,13 +202,13 @@ export class OurStaffComponent {
     {
       name: 'Mrs. Priyanka',
       qualification: 'M.Com',
-      post: 'Cleark'
+      post: 'Clerk'
     },
 
     {
       name: 'Ms. Jyoti Ingale',
       qualification: 'B.A',
-      post: 'Cleark'
+      post: 'Clerk'
     },
 
     {
@@ -242,16 +250,32 @@ export class OurStaffComponent {
   ];
 
 
+  /* =====================================================
+     GET STAFF INITIALS
+  ===================================================== */
+
   getInitials(name: string): string {
+
+    if (!name || !name.trim()) {
+      return 'ST';
+    }
 
     const cleanName = name
       .replace(/^(Mr\.|Mrs\.|Ms\.)\s*/i, '')
       .trim();
 
-    const parts = cleanName.split(/\s+/);
+    const parts = cleanName
+      .split(/\s+/)
+      .filter(Boolean);
+
+    if (parts.length === 0) {
+      return 'ST';
+    }
 
     if (parts.length === 1) {
-      return parts[0].substring(0, 2).toUpperCase();
+      return parts[0]
+        .substring(0, 2)
+        .toUpperCase();
     }
 
     return (
@@ -261,11 +285,22 @@ export class OurStaffComponent {
   }
 
 
+  /* =====================================================
+     SENIOR POST
+  ===================================================== */
+
   isSeniorPost(post: string): boolean {
-    return (
-      post === 'Head Master' ||
-      post === 'Supervisor'
-    );
+
+    if (!post) {
+      return false;
+    }
+
+    const seniorPosts = [
+      'Head Master',
+      'Supervisor'
+    ];
+
+    return seniorPosts.includes(post);
   }
 
 }
