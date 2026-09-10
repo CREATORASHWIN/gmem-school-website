@@ -1,0 +1,490 @@
+<div class="admin-dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-header">
+      <div class="school-logo">
+        🏫
+      </div>
+
+      <div>
+        <h2>Gandhi Memorial</h2>
+        <span>Super Admin</span>
+      </div>
+    </div>
+
+
+    <!-- SIDEBAR NAVIGATION -->
+    <nav class="sidebar-nav">
+
+      <a
+        class="nav-item active"
+        routerLink="/admin-dashboard"
+      >
+        <span class="icon">📊</span>
+        <span>Dashboard</span>
+      </a>
+
+
+      <!-- NEWS -->
+      <a
+        class="nav-item"
+        routerLink="/admin-news"
+      >
+        <span class="icon">📰</span>
+        <span>News</span>
+      </a>
+
+
+      <!-- EVENTS -->
+      <a class="nav-item">
+        <span class="icon">📅</span>
+        <span>Events</span>
+      </a>
+
+
+      <!-- GALLERY -->
+      <a class="nav-item">
+        <span class="icon">🖼️</span>
+        <span>Gallery</span>
+      </a>
+
+
+      <!-- STAFF -->
+      <a class="nav-item">
+        <span class="icon">👨‍🏫</span>
+        <span>Our Staff</span>
+      </a>
+
+
+      <!-- ACHIEVEMENTS -->
+      <a class="nav-item">
+        <span class="icon">🏆</span>
+        <span>Achievements</span>
+      </a>
+
+
+      <!-- SCHOOL ACTIVITIES -->
+      <a class="nav-item">
+        <span class="icon">🎯</span>
+        <span>School Activities</span>
+      </a>
+
+
+      <!-- ANNUAL REPORTS -->
+      <a class="nav-item">
+        <span class="icon">📄</span>
+        <span>Annual Reports</span>
+      </a>
+
+
+      <!-- SCHOOL INFORMATION -->
+      <a class="nav-item">
+        <span class="icon">🏫</span>
+        <span>School Information</span>
+      </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+    <div class="sidebar-bottom">
+
+      <div class="admin-profile">
+
+        <div class="profile-icon">
+          👤
+        </div>
+
+        <div class="profile-info">
+          <strong>Super Admin</strong>
+          <span>{{ adminEmail }}</span>
+        </div>
+
+      </div>
+
+
+      <!-- LOGOUT -->
+      <button
+        class="logout-button"
+        type="button"
+        (click)="logout()"
+      >
+        🚪 Logout
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <div>
+        <h1>Dashboard</h1>
+
+        <p>
+          Welcome to the Super Admin Panel
+        </p>
+      </div>
+
+
+      <div class="topbar-admin">
+
+        <span>
+          Super Admin
+        </span>
+
+        <div class="top-avatar">
+          👤
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- DASHBOARD CONTENT -->
+    <section class="dashboard-content">
+
+
+      <!-- WELCOME CARD -->
+      <div class="welcome-card">
+
+        <div>
+
+          <h2>
+            Welcome, Super Admin 👋
+          </h2>
+
+          <p>
+            Manage Gandhi Memorial English High School website
+            content from this dashboard.
+          </p>
+
+        </div>
+
+
+        <div class="welcome-icon">
+          🏫
+        </div>
+
+      </div>
+
+
+      <!-- STATISTICS -->
+      <div class="stats-grid">
+
+
+        <!-- NEWS -->
+        <div class="stat-card">
+
+          <div class="stat-icon news-icon">
+            📰
+          </div>
+
+          <div>
+            <span>News</span>
+            <strong>0</strong>
+          </div>
+
+        </div>
+
+
+        <!-- EVENTS -->
+        <div class="stat-card">
+
+          <div class="stat-icon events-icon">
+            📅
+          </div>
+
+          <div>
+            <span>Events</span>
+            <strong>0</strong>
+          </div>
+
+        </div>
+
+
+        <!-- GALLERY -->
+        <div class="stat-card">
+
+          <div class="stat-icon gallery-icon">
+            🖼️
+          </div>
+
+          <div>
+            <span>Gallery</span>
+            <strong>0</strong>
+          </div>
+
+        </div>
+
+
+        <!-- STAFF -->
+        <div class="stat-card">
+
+          <div class="stat-icon staff-icon">
+            👨‍🏫
+          </div>
+
+          <div>
+            <span>Staff</span>
+            <strong>0</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WEBSITE MANAGEMENT -->
+      <section class="section">
+
+        <div class="section-header">
+
+          <div>
+
+            <h2>
+              Website Management
+            </h2>
+
+            <p>
+              Manage the content displayed on the school website.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MANAGEMENT GRID -->
+        <div class="management-grid">
+
+
+          <!-- NEWS MANAGEMENT -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              📰
+            </div>
+
+            <div>
+
+              <h3>
+                News Management
+              </h3>
+
+              <p>
+                Add, edit and remove school news.
+              </p>
+
+              <button
+                type="button"
+                (click)="openNews()"
+              >
+                Manage News →
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- EVENTS MANAGEMENT -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              📅
+            </div>
+
+            <div>
+
+              <h3>
+                Events Management
+              </h3>
+
+              <p>
+                Manage upcoming school events.
+              </p>
+
+              <button type="button">
+                Manage Events →
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- GALLERY MANAGEMENT -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              🖼️
+            </div>
+
+            <div>
+
+              <h3>
+                Gallery Management
+              </h3>
+
+              <p>
+                Upload and manage school photos.
+              </p>
+
+              <button type="button">
+                Manage Gallery →
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- STAFF MANAGEMENT -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              👨‍🏫
+            </div>
+
+            <div>
+
+              <h3>
+                Staff Management
+              </h3>
+
+              <p>
+                Manage teachers and staff information.
+              </p>
+
+              <button type="button">
+                Manage Staff →
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- ACHIEVEMENTS -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              🏆
+            </div>
+
+            <div>
+
+              <h3>
+                Achievements
+              </h3>
+
+              <p>
+                Manage school achievements.
+              </p>
+
+              <button type="button">
+                Manage Achievements →
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- SCHOOL ACTIVITIES -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              🎯
+            </div>
+
+            <div>
+
+              <h3>
+                School Activities
+              </h3>
+
+              <p>
+                Manage school activities and programs.
+              </p>
+
+              <button type="button">
+                Manage Activities →
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- ANNUAL REPORTS -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              📄
+            </div>
+
+            <div>
+
+              <h3>
+                Annual Reports
+              </h3>
+
+              <p>
+                Upload and manage annual reports.
+              </p>
+
+              <button type="button">
+                Manage Reports →
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- SCHOOL INFORMATION -->
+          <div class="management-card">
+
+            <div class="management-icon">
+              🏫
+            </div>
+
+            <div>
+
+              <h3>
+                School Information
+              </h3>
+
+              <p>
+                Update school information and details.
+              </p>
+
+              <button type="button">
+                Manage Information →
+              </button>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+    </section>
+
+  </main>
+
+</div>

@@ -1,0 +1,87 @@
+<div class="admin-login-page">
+
+  <div class="login-card">
+
+```
+<!-- School Logo / Icon -->
+<div class="school-icon">
+  🏫
+</div>
+
+<!-- Heading -->
+<h1>Admin Login</h1>
+
+<p class="subtitle">
+  Gandhi Memorial English High School
+</p>
+
+<!-- Login Form -->
+<form (ngSubmit)="login()">
+
+  <!-- Email -->
+  <div class="form-group">
+
+    <label for="email">
+      Email Address
+    </label>
+
+    <input
+      id="email"
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Enter your email address"
+      autocomplete="email"
+      required
+    />
+
+  </div>
+
+  <!-- Password -->
+  <div class="form-group">
+
+    <label for="password">
+      Password
+    </label>
+
+    <input
+      id="password"
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Enter your password"
+      autocomplete="current-password"
+      required
+    />
+
+  </div>
+
+  <!-- Error Message -->
+  <div
+    class="error-message"
+    *ngIf="errorMessage"
+  >
+    {{ errorMessage }}
+  </div>
+
+  <!-- Login Button -->
+  <button
+    type="submit"
+    class="login-button"
+    [disabled]="loading"
+  >
+    <span *ngIf="!loading">Sign In</span>
+    <span *ngIf="loading">Signing in...</span>
+  </button>
+
+</form>
+
+<!-- Footer -->
+<p class="footer-text">
+  Authorized administrators only
+</p>
+```
+
+  </div>
+
+</div>

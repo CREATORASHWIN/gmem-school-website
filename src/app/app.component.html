@@ -1,5 +1,10 @@
-<app-header></app-header>
-<main>
+<!-- Public Website Header -->
+<app-header *ngIf="!isAdminPage"></app-header>
+
+<!-- Main Content -->
+<main [class.admin-main]="isAdminPage">
   <router-outlet></router-outlet>
 </main>
-<app-footer></app-footer>
+
+<!-- Public Website Footer -->
+<app-footer *ngIf="!isAdminPage"></app-footer>

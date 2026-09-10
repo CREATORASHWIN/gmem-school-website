@@ -1,0 +1,437 @@
+<div class="admin-news-page">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div>
+      <p class="page-kicker">Content Management</p>
+      <h1>News Management</h1>
+      <p class="page-description">
+        Create, update and manage school news announcements.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- SUCCESS MESSAGE -->
+  <div
+    *ngIf="successMessage"
+    class="alert success-alert"
+  >
+    <span>✓</span>
+    <span>{{ successMessage }}</span>
+  </div>
+
+
+  <!-- ERROR MESSAGE -->
+  <div
+    *ngIf="errorMessage"
+    class="alert error-alert"
+  >
+    <span>!</span>
+    <span>{{ errorMessage }}</span>
+  </div>
+
+
+  <!-- ADD / EDIT NEWS -->
+  <section class="news-form-card">
+
+    <div class="card-header">
+
+      <div>
+        <h2>
+          {{ editingId ? 'Edit News' : 'Add New News' }}
+        </h2>
+
+        <p>
+          {{
+            editingId
+              ? 'Update the selected school announcement.'
+              : 'Create a new announcement for parents and students.'
+          }}
+        </p>
+      </div>
+
+      <div
+        *ngIf="editingId"
+        class="editing-badge"
+      >
+        Editing
+      </div>
+
+    </div>
+
+
+    <form
+      (ngSubmit)="editingId ? updateNews() : addNews()"
+    >
+
+      <div class="form-grid">
+
+        <!-- TITLE -->
+        <div class="form-group full-width">
+
+          <label for="newsTitle">
+            News Title
+          </label>
+
+          <input
+            id="newsTitle"
+            type="text"
+            name="title"
+            [(ngModel)]="form.title"
+            placeholder="Enter news title"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <!-- DATE -->
+        <div class="form-group">
+
+          <label for="newsDate">
+            Date / Academic Year
+          </label>
+
+          <input
+            id="newsDate"
+            type="text"
+            name="date"
+            [(ngModel)]="form.date"
+            placeholder="Example: Academic year 2026"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <!-- PUBLISHED -->
+        <div class="form-group publish-group">
+
+          <label>
+            Publication Status
+          </label>
+
+          <label class="publish-toggle">
+
+            <input
+              type="checkbox"
+              name="published"
+              [(ngModel)]="form.published"
+            />
+
+            <span class="toggle-slider"></span>
+
+            <span class="toggle-text">
+              {{ form.published ? 'Published' : 'Draft' }}
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <div class="form-group full-width">
+
+          <label for="newsDescription">
+            Description
+          </label>
+
+          <textarea
+            id="newsDescription"
+            name="description"
+            [(ngModel)]="form.description"
+            rows="6"
+            placeholder="Enter the news announcement..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- IMAGE -->
+        <div class="form-group full-width">
+
+          <label for="newsImage">
+            News Image
+          </label>
+
+          <div class="image-upload-area">
+
+            <input
+              id="newsImage"
+              type="file"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+            />
+
+            <div class="upload-content">
+
+              <div class="upload-icon">
+                🖼️
+              </div>
+
+              <div>
+                <strong>
+                  Choose News Image
+                </strong>
+
+                <p>
+                  JPG, PNG or WEBP image
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- IMAGE PREVIEW -->
+          <div
+            *ngIf="imagePreview"
+            class="image-preview"
+          >
+
+            <img
+              [src]="imagePreview"
+              [alt]="form.title || 'News image preview'"
+            />
+
+            <div class="preview-label">
+              Image Preview
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM BUTTONS -->
+      <div class="form-actions">
+
+        <button
+          *ngIf="editingId"
+          type="button"
+          class="cancel-button"
+          (click)="cancelEdit()"
+          [disabled]="saving"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          class="save-button"
+          [disabled]="saving"
+        >
+
+          <span *ngIf="!saving">
+            {{ editingId ? 'Update News' : 'Add News' }}
+          </span>
+
+          <span *ngIf="saving">
+            Saving...
+          </span>
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+
+  <!-- NEWS LIST -->
+  <section class="news-list-section">
+
+    <div class="list-header">
+
+      <div>
+        <h2>News Announcements</h2>
+
+        <p>
+          Manage all school news published through the website.
+        </p>
+      </div>
+
+      <div class="news-count">
+        {{ newsItems.length }}
+        {{ newsItems.length === 1 ? 'News' : 'News Items' }}
+      </div>
+
+    </div>
+
+
+    <!-- LOADING -->
+    <div
+      *ngIf="loading"
+      class="empty-state"
+    >
+      <div class="loading-spinner"></div>
+
+      <p>
+        Loading news announcements...
+      </p>
+    </div>
+
+
+    <!-- NEWS TABLE -->
+    <div
+      *ngIf="!loading && newsItems.length > 0"
+      class="news-table-wrapper"
+    >
+
+      <div class="news-table">
+
+        <!-- TABLE HEADER -->
+        <div class="table-header">
+
+          <div>
+            News
+          </div>
+
+          <div>
+            Date
+          </div>
+
+          <div>
+            Status
+          </div>
+
+          <div>
+            Actions
+          </div>
+
+        </div>
+
+
+        <!-- NEWS ROW -->
+        <div
+          *ngFor="let news of newsItems"
+          class="news-row"
+        >
+
+          <!-- NEWS INFO -->
+          <div class="news-info">
+
+            <!-- IMAGE -->
+            <div class="news-thumbnail">
+
+              <img
+                *ngIf="news.imageUrl"
+                [src]="news.imageUrl"
+                [alt]="news.title"
+              />
+
+              <div
+                *ngIf="!news.imageUrl"
+                class="no-image"
+              >
+                📰
+              </div>
+
+            </div>
+
+
+            <!-- TITLE + DESCRIPTION -->
+            <div class="news-text">
+
+              <h3>
+                {{ news.title }}
+              </h3>
+
+              <p>
+                {{ news.description }}
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- DATE -->
+          <div class="news-date">
+
+            {{ news.date }}
+
+          </div>
+
+
+          <!-- STATUS -->
+          <div>
+
+            <button
+              type="button"
+              class="status-button"
+              [class.published]="news.published"
+              [class.draft]="!news.published"
+              (click)="togglePublished(news)"
+            >
+
+              <span class="status-dot"></span>
+
+              {{
+                news.published
+                  ? 'Published'
+                  : 'Draft'
+              }}
+
+            </button>
+
+          </div>
+
+
+          <!-- ACTIONS -->
+          <div class="news-actions">
+
+            <button
+              type="button"
+              class="edit-button"
+              (click)="editNews(news)"
+            >
+              Edit
+            </button>
+
+            <button
+              type="button"
+              class="delete-button"
+              (click)="deleteNews(news)"
+            >
+              Delete
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- NO NEWS -->
+    <div
+      *ngIf="!loading && newsItems.length === 0"
+      class="empty-state"
+    >
+
+      <div class="empty-icon">
+        📰
+      </div>
+
+      <h3>
+        No News Found
+      </h3>
+
+      <p>
+        Start by adding your first school announcement.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
