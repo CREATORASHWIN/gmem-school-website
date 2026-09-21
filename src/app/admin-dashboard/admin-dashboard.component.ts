@@ -29,6 +29,15 @@ export class AdminDashboardComponent {
 
 
   // ==========================================
+  // OPEN GALLERY MANAGEMENT
+  // ==========================================
+
+  openGallery(): void {
+    this.router.navigate(['/admin-gallery']);
+  }
+
+
+  // ==========================================
   // LOGOUT
   // ==========================================
 

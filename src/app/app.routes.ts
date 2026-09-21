@@ -19,6 +19,7 @@ import { ExtraCurricularActivitiesComponent } from './extra-curricular-activitie
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminNewsComponent } from './admin-news/admin-news.component';
+import { AdminGalleryComponent } from './admin-gallery/admin-gallery.component';
 
 import { authGuard } from './auth.guard';
 
@@ -102,6 +103,13 @@ export const routes: Routes = [
   },
 
   {
+    path: 'admin-gallery',
+    component: AdminGalleryComponent,
+    canActivate: [authGuard],
+    title: 'Gallery Management | Gandhi Memorial English High School'
+  },
+
+  {
     path: 'extra-curricular-activities',
     component: ExtraCurricularActivitiesComponent,
     title: 'Extra Curricular Activities | Gandhi Memorial English High School'
@@ -141,6 +149,9 @@ export const routes: Routes = [
     canActivate: [authGuard],
     title: 'News Management | Gandhi Memorial English High School'
   },
+
+  
+
 
 
   // ==========================================
