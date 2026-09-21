@@ -20,6 +20,15 @@ export class AdminDashboardComponent {
 
 
   // ==========================================
+  // OPEN DASHBOARD
+  // ==========================================
+
+  openDashboard(): void {
+    this.router.navigate(['/admin-dashboard']);
+  }
+
+
+  // ==========================================
   // OPEN NEWS MANAGEMENT
   // ==========================================
 

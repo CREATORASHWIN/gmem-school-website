@@ -1,9 +1,14 @@
 <div class="admin-dashboard">
 
+  <!-- ========================================== -->
   <!-- SIDEBAR -->
+  <!-- ========================================== -->
+
   <aside class="sidebar">
 
+    <!-- SIDEBAR HEADER -->
     <div class="sidebar-header">
+
       <div class="school-logo">
         🏫
       </div>
@@ -12,87 +17,115 @@
         <h2>Gandhi Memorial</h2>
         <span>Super Admin</span>
       </div>
+
     </div>
 
 
+    <!-- ========================================== -->
     <!-- SIDEBAR NAVIGATION -->
+    <!-- ========================================== -->
+
     <nav class="sidebar-nav">
 
       <!-- DASHBOARD -->
-      <a
+      <button
+        type="button"
         class="nav-item active"
-        routerLink="/admin-dashboard"
+        (click)="openDashboard()"
       >
         <span class="icon">📊</span>
         <span>Dashboard</span>
-      </a>
+      </button>
 
 
       <!-- NEWS -->
-      <a
+      <button
+        type="button"
         class="nav-item"
-        routerLink="/admin-news"
+        (click)="openNews()"
       >
         <span class="icon">📰</span>
         <span>News</span>
-      </a>
+      </button>
 
 
       <!-- EVENTS -->
-      <a class="nav-item">
+      <button
+        type="button"
+        class="nav-item"
+      >
         <span class="icon">📅</span>
         <span>Events</span>
-      </a>
+      </button>
 
 
       <!-- GALLERY -->
-      <a
+      <button
+        type="button"
         class="nav-item"
-        routerLink="/admin-gallery"
+        (click)="openGallery()"
       >
         <span class="icon">🖼️</span>
         <span>Gallery</span>
-      </a>
+      </button>
 
 
       <!-- STAFF -->
-      <a class="nav-item">
+      <button
+        type="button"
+        class="nav-item"
+      >
         <span class="icon">👨‍🏫</span>
         <span>Our Staff</span>
-      </a>
+      </button>
 
 
       <!-- ACHIEVEMENTS -->
-      <a class="nav-item">
+      <button
+        type="button"
+        class="nav-item"
+      >
         <span class="icon">🏆</span>
         <span>Achievements</span>
-      </a>
+      </button>
 
 
       <!-- SCHOOL ACTIVITIES -->
-      <a class="nav-item">
+      <button
+        type="button"
+        class="nav-item"
+      >
         <span class="icon">🎯</span>
         <span>School Activities</span>
-      </a>
+      </button>
 
 
       <!-- ANNUAL REPORTS -->
-      <a class="nav-item">
+      <button
+        type="button"
+        class="nav-item"
+      >
         <span class="icon">📄</span>
         <span>Annual Reports</span>
-      </a>
+      </button>
 
 
       <!-- SCHOOL INFORMATION -->
-      <a class="nav-item">
+      <button
+        type="button"
+        class="nav-item"
+      >
         <span class="icon">🏫</span>
         <span>School Information</span>
-      </a>
+      </button>
 
     </nav>
 
 
+    <!-- ========================================== -->
     <!-- SIDEBAR BOTTOM -->
+    <!-- ========================================== -->
+
     <div class="sidebar-bottom">
 
       <div class="admin-profile">
@@ -102,8 +135,15 @@
         </div>
 
         <div class="profile-info">
-          <strong>Super Admin</strong>
-          <span>{{ adminEmail }}</span>
+
+          <strong>
+            Super Admin
+          </strong>
+
+          <span>
+            {{ adminEmail }}
+          </span>
+
         </div>
 
       </div>
@@ -123,18 +163,26 @@
   </aside>
 
 
+  <!-- ========================================== -->
   <!-- MAIN CONTENT -->
+  <!-- ========================================== -->
+
   <main class="main-content">
+
 
     <!-- TOP BAR -->
     <header class="topbar">
 
       <div>
-        <h1>Dashboard</h1>
+
+        <h1>
+          Dashboard
+        </h1>
 
         <p>
           Welcome to the Super Admin Panel
         </p>
+
       </div>
 
 
@@ -153,11 +201,17 @@
     </header>
 
 
+    <!-- ========================================== -->
     <!-- DASHBOARD CONTENT -->
+    <!-- ========================================== -->
+
     <section class="dashboard-content">
 
 
+      <!-- ========================================== -->
       <!-- WELCOME CARD -->
+      <!-- ========================================== -->
+
       <div class="welcome-card">
 
         <div>
@@ -181,7 +235,10 @@
       </div>
 
 
+      <!-- ========================================== -->
       <!-- STATISTICS -->
+      <!-- ========================================== -->
+
       <div class="stats-grid">
 
 
@@ -193,8 +250,15 @@
           </div>
 
           <div>
-            <span>News</span>
-            <strong>0</strong>
+
+            <span>
+              News
+            </span>
+
+            <strong>
+              0
+            </strong>
+
           </div>
 
         </div>
@@ -208,23 +272,43 @@
           </div>
 
           <div>
-            <span>Events</span>
-            <strong>0</strong>
+
+            <span>
+              Events
+            </span>
+
+            <strong>
+              0
+            </strong>
+
           </div>
 
         </div>
 
 
         <!-- GALLERY -->
-        <div class="stat-card">
+        <div
+          class="stat-card"
+          role="button"
+          tabindex="0"
+          (click)="openGallery()"
+          (keydown.enter)="openGallery()"
+        >
 
           <div class="stat-icon gallery-icon">
             🖼️
           </div>
 
           <div>
-            <span>Gallery</span>
-            <strong>0</strong>
+
+            <span>
+              Gallery
+            </span>
+
+            <strong>
+              0
+            </strong>
+
           </div>
 
         </div>
@@ -238,8 +322,15 @@
           </div>
 
           <div>
-            <span>Staff</span>
-            <strong>0</strong>
+
+            <span>
+              Staff
+            </span>
+
+            <strong>
+              0
+            </strong>
+
           </div>
 
         </div>
@@ -247,7 +338,10 @@
       </div>
 
 
+      <!-- ========================================== -->
       <!-- WEBSITE MANAGEMENT -->
+      <!-- ========================================== -->
+
       <section class="section">
 
         <div class="section-header">
@@ -267,12 +361,24 @@
         </div>
 
 
+        <!-- ========================================== -->
         <!-- MANAGEMENT GRID -->
+        <!-- ========================================== -->
+
         <div class="management-grid">
 
 
+          <!-- ========================================== -->
           <!-- NEWS MANAGEMENT -->
-          <div class="management-card">
+          <!-- ========================================== -->
+
+          <div
+            class="management-card"
+            role="button"
+            tabindex="0"
+            (click)="openNews()"
+            (keydown.enter)="openNews()"
+          >
 
             <div class="management-icon">
               📰
@@ -290,7 +396,7 @@
 
               <button
                 type="button"
-                (click)="openNews()"
+                (click)="openNews(); $event.stopPropagation()"
               >
                 Manage News →
               </button>
@@ -300,7 +406,10 @@
           </div>
 
 
+          <!-- ========================================== -->
           <!-- EVENTS MANAGEMENT -->
+          <!-- ========================================== -->
+
           <div class="management-card">
 
             <div class="management-icon">
@@ -317,7 +426,9 @@
                 Manage upcoming school events.
               </p>
 
-              <button type="button">
+              <button
+                type="button"
+              >
                 Manage Events →
               </button>
 
@@ -326,8 +437,17 @@
           </div>
 
 
+          <!-- ========================================== -->
           <!-- GALLERY MANAGEMENT -->
-          <div class="management-card">
+          <!-- ========================================== -->
+
+          <div
+            class="management-card"
+            role="button"
+            tabindex="0"
+            (click)="openGallery()"
+            (keydown.enter)="openGallery()"
+          >
 
             <div class="management-icon">
               🖼️
@@ -345,7 +465,7 @@
 
               <button
                 type="button"
-                (click)="openGallery()"
+                (click)="openGallery(); $event.stopPropagation()"
               >
                 Manage Gallery →
               </button>
@@ -355,7 +475,10 @@
           </div>
 
 
+          <!-- ========================================== -->
           <!-- STAFF MANAGEMENT -->
+          <!-- ========================================== -->
+
           <div class="management-card">
 
             <div class="management-icon">
@@ -372,7 +495,9 @@
                 Manage teachers and staff information.
               </p>
 
-              <button type="button">
+              <button
+                type="button"
+              >
                 Manage Staff →
               </button>
 
@@ -381,7 +506,10 @@
           </div>
 
 
+          <!-- ========================================== -->
           <!-- ACHIEVEMENTS -->
+          <!-- ========================================== -->
+
           <div class="management-card">
 
             <div class="management-icon">
@@ -398,7 +526,9 @@
                 Manage school achievements.
               </p>
 
-              <button type="button">
+              <button
+                type="button"
+              >
                 Manage Achievements →
               </button>
 
@@ -407,7 +537,10 @@
           </div>
 
 
+          <!-- ========================================== -->
           <!-- SCHOOL ACTIVITIES -->
+          <!-- ========================================== -->
+
           <div class="management-card">
 
             <div class="management-icon">
@@ -424,7 +557,9 @@
                 Manage school activities and programs.
               </p>
 
-              <button type="button">
+              <button
+                type="button"
+              >
                 Manage Activities →
               </button>
 
@@ -433,7 +568,10 @@
           </div>
 
 
+          <!-- ========================================== -->
           <!-- ANNUAL REPORTS -->
+          <!-- ========================================== -->
+
           <div class="management-card">
 
             <div class="management-icon">
@@ -450,7 +588,9 @@
                 Upload and manage annual reports.
               </p>
 
-              <button type="button">
+              <button
+                type="button"
+              >
                 Manage Reports →
               </button>
 
@@ -459,7 +599,10 @@
           </div>
 
 
+          <!-- ========================================== -->
           <!-- SCHOOL INFORMATION -->
+          <!-- ========================================== -->
+
           <div class="management-card">
 
             <div class="management-icon">
@@ -476,7 +619,9 @@
                 Update school information and details.
               </p>
 
-              <button type="button">
+              <button
+                type="button"
+              >
                 Manage Information →
               </button>
 
