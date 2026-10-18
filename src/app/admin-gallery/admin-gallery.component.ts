@@ -262,66 +262,52 @@ export class AdminGalleryComponent {
   // UPLOAD IMAGE TO CLOUDINARY
   // ==========================================
 
-  private async uploadToCloudinary(
-    file: File
-  ): Promise<string> {
+ private async uploadToCloudinary(
+  file: File
+): Promise<string> {
 
-    const uploadUrl =
-      `https://api.cloudinary.com/v1_1/${this.cloudinaryCloudName}/image/upload`;
+  const uploadUrl =
+    `https://api.cloudinary.com/v1_1/${this.cloudinaryCloudName}/image/upload`;
 
+  const formData = new FormData();
 
-    const formData =
-      new FormData();
+  formData.append('file', file);
 
+  formData.append(
+    'upload_preset',
+    this.cloudinaryUploadPreset
+  );
 
-    formData.append(
-      'file',
-      file
+  try {
+
+    const response = await fetch(
+      uploadUrl,
+      {
+        method: 'POST',
+        body: formData
+      }
     );
 
-
-    formData.append(
-      'upload_preset',
-      this.cloudinaryUploadPreset
-    );
-
-
-    formData.append(
-      'folder',
-      'gmem-school'
-    );
-
-
-    const response =
-      await fetch(
-        uploadUrl,
-        {
-          method: 'POST',
-          body: formData
-        }
-      );
-
+    const result = await response.json();
 
     if (!response.ok) {
 
-      const errorText =
-        await response.text();
+      console.error(
+        'Cloudinary status:',
+        response.status
+      );
 
       console.error(
         'Cloudinary upload error:',
-        errorText
+        result
       );
 
       throw new Error(
+        result?.error?.message ||
         'Cloudinary upload failed.'
       );
 
     }
-
-
-    const result =
-      await response.json();
-
 
     if (!result.secure_url) {
 
@@ -331,10 +317,20 @@ export class AdminGalleryComponent {
 
     }
 
-
     return result.secure_url;
 
+  } catch (error) {
+
+    console.error(
+      'Cloudinary upload failed:',
+      error
+    );
+
+    throw error;
+
   }
+
+}
 
 
   // ==========================================
